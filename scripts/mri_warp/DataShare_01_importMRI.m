@@ -18,7 +18,7 @@ for ii = 1:length(subj_mri)
     
     % Check if MRI exist
     if strcmp(subj_mri{ii,2}, 'nan')
-        fprintf('Subj %s markes as no MRI.\n', subj)
+        fprintf('Subj %s marked as no MRI.\n', subj)
         continue
     end
     
@@ -36,8 +36,8 @@ for ii = 1:length(subj_mri)
     if exist(oldfname, 'file')
         fprintf('Subj %s previously imported.\nWill copy: \n%s -> %s ...', subj, oldfname, outfname)
         copyfile(oldfname, outfname); disp('done')
-        noexits = [noexits; subj];
     else
+        noexits = [noexits; subj];
         fprintf('Import raw MRI from %s...', raw_path)
         tmp = dir(mri_path);
         allnames = {tmp.name};
@@ -49,4 +49,4 @@ for ii = 1:length(subj_mri)
     end
 end
 
-
+%END

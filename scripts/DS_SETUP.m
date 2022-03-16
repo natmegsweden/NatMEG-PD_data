@@ -19,7 +19,7 @@ else
     dirs.group_path     = '/home/mikkel/PD_long/groupanalysis';
     dirs.raw_mri        = '/archive/20079_parkinsons_longitudinal/MRI/';
     dirs.ERproj         = '/home/mikkel/PD_bbER/meg_data';
-    ftpath              = '~/fieldtrip/fieldtrip'
+    ftpath              = '~/fieldtrip/fieldtrip';
 end
 addpath(ftpath)
 ft_defaults 
