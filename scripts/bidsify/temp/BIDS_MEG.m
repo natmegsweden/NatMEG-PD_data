@@ -63,14 +63,14 @@ filenames = {
 
 for subindx=1:numel(subjects)
   for runindx=1:2
-    d = dir(sprintf('/home/igocom/PD_data_test/NatMEG_0521/190417/rest_ec_mc_avgtrans_tsss_corr95.fif', subj{subindx}, runindx));
+    d = dir(sprintf('/home/igocom/PD_data_test/NatMEG_0521/190417/rest_ec_mc_avgtrans_tsss_corr95.fif', subjects{subindx}, runindx));
     if isempty(d)
       % for most subjects the data was recorded in a single run
       % in that case run 2 does not exist
       continue
     else
       origname = fullfile(d.folder, d.name);
-      anonname = fullfile(d.folder, sprintf('%s_%d.fif', subj{subindx}, runindx));
+      anonname = fullfile(d.folder, sprintf('%s_%d.fif', subjects{subindx}, runindx));
       disp(anonname); % this is just an intermediate name, the final name will be assigned by data2bids
     end
     
@@ -79,7 +79,7 @@ for subindx=1:numel(subjects)
     cfg = [];
     
     cfg.bidsroot = '/home/igocom/bids';  % write to the present working directory
-    cfg.sub = subj{subindx};
+    cfg.sub = subjects{subindx};
     cfg.run = runindx;
     cfg.dataset = anonname; % this is the intermediate name
     
