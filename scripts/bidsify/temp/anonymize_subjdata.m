@@ -62,7 +62,7 @@ for aa = 1:length(age)
     elseif 51 <= ax && ax <= 55
         agebin{aa} = '51-55';
     elseif 56 <= ax && ax <= 60
-        agebin{aa} = '45-60';       
+        agebin{aa} = '56-60';       
     elseif 61 <= ax && ax <= 65
         agebin{aa} = '61-65';
     elseif 66 <= ax && ax <= 70
@@ -97,12 +97,20 @@ MoCA = table2array(subj_dat2(:,7));
 FAB = table2array(subj_dat2(:,8));
 BDI = table2array(subj_dat2(:,9));
 
+%% ###########################
 % MISSING UPDRS DATA
+% MISSING LEDD DATA
+% MISSING DISEASE DURATION
+% Possibly add this manually to CSV file or combine in other script.
 
 %% Combine as table
-alldata = table(subjects, subject_date, anonym_id, sex, agebin, group, MoCA, FAB, BDI);
+linkdata = table(subjects, subject_date, anonym_id);
+metadata = sortrows(table(anonym_id, sex, agebin, group, MoCA, FAB, BDI));
 
 %% Save
-save(fullfile(subj_data_path, 'alldata'), 'alldata'); disp('done')
-
+save(fullfile(subj_data_path, 'metadata'), 'metadata');
+writetable(metadata, fullfile(subj_data_path,'metadata.csv'))
+save(fullfile(subj_data_path, 'linkdata'), 'linkdata');
+writetable(linkdata, fullfile(subj_data_path,'linkdata.csv'))
+disp('done')
 %END
