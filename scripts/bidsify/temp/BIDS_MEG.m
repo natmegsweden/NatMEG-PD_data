@@ -88,10 +88,10 @@ general.dataset_description.BIDSVersion = 'v1.5.0';
 
 cfg.coordsystem.MEGCoordinateSystem     = 'Neuromag';
 
-
+general.dataset_description.EthicsApprovals = 'The Swedish Ethical Review Authority. DNR 2019-00542';
 
 % MCV: MISSING FIELDS WHERE WE NEED TO FIND THE CORRECT INFO
-% general.dataset_description.EthicsApprovals =    % ???
+
 % cfg.meg.DewarPosition                 = 'upright'; % REQUIRED. Position of the dewar during the MEG scan: "upright", "supine" or "degrees" of angle from vertical: for example on CTF systems, upright=15??, supine = 90??.
 % cfg.meg.SoftwareFilters               = 'n/a'; % REQUIRED. List of temporal and/or spatial software filters applied, orideally key:valuepairsofpre-appliedsoftwarefiltersandtheir parameter values: e.g., {"SSS": {"frame": "head", "badlimit": 7}}, {"SpatialCompensation": {"GradientOrder": Order of the gradient compensation}}. Write "n/a" if no software filters applied.
 % cfg.meg.DigitizedLandmarks            = 'true'; % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
