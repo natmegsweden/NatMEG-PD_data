@@ -18,16 +18,14 @@
 close all       % Close all open windows
 clear all       % Clear all variables from the workspace
 restoredefaultpath
-% addpath('/home/igocom/fieldtrip/') % Add the path
-addpath('~/fieldtrip/fieldtrip') % Add the path
+addpath('/home/share/fieldtrip/') % Add the path
+% addpath('~/fieldtrip/fieldtrip') % Add the path
 ft_defaults
 
 raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
-meg_path        = '/home/mikkel/PD_long/data_share/temp';
-% meg_path       = '/home/igocom/PD_data_test';
-subj_data_path  = '/home/mikkel/PD_long/subj_data/';
-bidsroot        = '/home/mikkel/PD_long/data_share/temp'; 
-
+subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data/';
+%bidsroot        = '/home/mikkel/PD_long/data_share/temp'; 
+bidsroot  = '/home/igocom/BIDS'
 %% 
 % 
 % 
@@ -37,14 +35,15 @@ bidsroot        = '/home/mikkel/PD_long/data_share/temp';
 
 %% Define subjects and sessions
 
-% subjects_and_dates = {
-%                 'NatMEG_0521/190417/'
-%                 'NatMEG_0522/190426/'
-%                 'NatMEG_0523/190429/'
-%                 'NatMEG_0524/190429/'
-% 
-%              };
-% 
+%  subjects_and_dates = {
+%                  'NatMEG_0521/190417/'
+%                  'NatMEG_0522/190426/'
+%                  'NatMEG_0523/190429/'
+%                  'NatMEG_0524/190429/'
+ 
+
+%                };
+
 % subjects =  {
 %                 'NatMEG_0521'
 %                 'NatMEG_0521'
@@ -64,9 +63,12 @@ bidsroot        = '/home/mikkel/PD_long/data_share/temp';
 % All subject relevant data is now stored in the 'alldata.mat' file (see
 % other script how it is generated). Import and use for the bidsify loop.
      
-load(fullfile(subj_data_path, 'alldata'));
+load(fullfile(subj_data_path, 'linkdata'));
+load(fullfile(subj_data_path, 'metadata'));
        
-subjects_and_dates = alldata.subject_date;
+subjects_and_dates = linkdata.subject_date(1:4);
+
+
 
 %% 
 % *Run loop*
@@ -80,7 +82,7 @@ general.bidsroot = bidsroot;
 
 general.InstitutionName                 = 'Karolinska Institute';
 general.InstitutionalDepartmentName     = 'Department of Clinical Neuroscience';
-general.InstitutionAddress              = 'Nobels väg 9, 171 77, Stockholm, Sweden';
+general.InstitutionAddress              = 'Nobels v??g 9, 171 77, Stockholm, Sweden';
 general.dataset_description.Name        = 'NatMEG_PD_database';
 general.dataset_description.BIDSVersion = 'v1.5.0';
 
@@ -103,7 +105,6 @@ cfg.coordsystem.MEGCoordinateSystem     = 'Neuromag';
 %% Run loop
 for subindx=1:numel(subjects_and_dates)
   for runindx=1:n_sessions
-%     d = dir(sprintf('/home/igocom/PD_data_test/NatMEG_0521/190417/rest_ec_mc_avgtrans_tsss_corr95.fif', subjects{subindx}, runindx));
     d = find_files(fullfile(raw_path, subjects_and_dates{subindx}), 'rest_ec_mc_avgtrans_tsss_corr95');
     if isempty(d)
       % for most subjects the data was recorded in a single run
@@ -111,23 +112,24 @@ for subindx=1:numel(subjects_and_dates)
       continue
     else
       origname = fullfile(raw_path, subjects_and_dates{subindx}, d{1});
-%       anonname = fullfile(raw_path, sprintf('%s_%d.fif', alldata.anonym_id{subindx}, runindx));
-%       disp(anonname); % this is just an intermediate name, the final name will be assigned by data2bids
+%      anonname = fullfile(meg_path, sprintf('%s_%d.fif', linkdata.anonym_id{subindx}, runindx));
+%      disp(anonname); % this is just an intermediate name, the final name will be assigned by data2bids
     end
     
     cfg = general;
-%     cfg.bidsroot = '/home/igocom/bids';  % write to the present working directory
-    cfg.sub      = alldata.anonym_id{subindx};
+    cfg.bidsroot = bidsroot;  % write to the present working directory
+    cfg.sub      = linkdata.anonym_id{subindx};
     cfg.task     = 'rest';
     cfg.TaskName = 'rest';
-%     cfg.run      = runindx;
+    cfg.run      = runindx;
     cfg.dataset  = origname; % this is the intermediate name
     cfg.datatype = 'meg';
+    cfg.proc = 'tsss';
     
-    cfg.participants.age = alldata.agebin(subindx);
-%     cfg.participants.handedness = handedness(i);   % THIS INFO IS MISSING
-    cfg.participants.clinical_state = alldata.group(subindx);
-    cfg.participants.sex = alldata.sex(subindx);
+    cfg.participants.age = metadata.agebin(subindx);
+    %cfg.participants.handedness = handedness(i);   % THIS INFO IS MISSING
+    cfg.participants.clinical_state = metadata.group(subindx);
+    cfg.participants.sex = metadata.sex(subindx);
   
     try
       data2bids(cfg);
