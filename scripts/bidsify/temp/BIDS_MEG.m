@@ -82,7 +82,7 @@ general.bidsroot = bidsroot;
 
 general.InstitutionName                 = 'Karolinska Institute';
 general.InstitutionalDepartmentName     = 'Department of Clinical Neuroscience';
-general.InstitutionAddress              = 'Nobels v??g 9, 171 77, Stockholm, Sweden';
+general.InstitutionAddress              = 'Nobels väg 9, 171 77, Stockholm, Sweden';
 general.dataset_description.Name        = 'NatMEG_PD_database';
 general.dataset_description.BIDSVersion = 'v1.5.0';
 
@@ -92,10 +92,10 @@ general.dataset_description.EthicsApprovals = 'The Swedish Ethical Review Author
 
 % MCV: MISSING FIELDS WHERE WE NEED TO FIND THE CORRECT INFO
 
-% cfg.meg.DewarPosition                 = 'upright'; % REQUIRED. Position of the dewar during the MEG scan: "upright", "supine" or "degrees" of angle from vertical: for example on CTF systems, upright=15??, supine = 90??.
-% cfg.meg.SoftwareFilters               = 'n/a'; % REQUIRED. List of temporal and/or spatial software filters applied, orideally key:valuepairsofpre-appliedsoftwarefiltersandtheir parameter values: e.g., {"SSS": {"frame": "head", "badlimit": 7}}, {"SpatialCompensation": {"GradientOrder": Order of the gradient compensation}}. Write "n/a" if no software filters applied.
-% cfg.meg.DigitizedLandmarks            = 'true'; % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
-% cfg.meg.DigitizedHeadPoints           = 'true'; % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
+cfg.meg.DewarPosition                 = 'upright'; % REQUIRED. Position of the dewar during the MEG scan: "upright", "supine" or "degrees" of angle from vertical: for example on CTF systems, upright=15??, supine = 90??.
+cfg.meg.SoftwareFilters               = 'n/a'; % REQUIRED. List of temporal and/or spatial software filters applied, orideally key:valuepairsofpre-appliedsoftwarefiltersandtheir parameter values: e.g., {"SSS": {"frame": "head", "badlimit": 7}}, {"SpatialCompensation": {"GradientOrder": Order of the gradient compensation}}. Write "n/a" if no software filters applied.
+cfg.meg.DigitizedLandmarks            = 'true'; % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
+cfg.meg.DigitizedHeadPoints           = 'true'; % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
 % cfg.events = ???  %MCV: I am not sure how to add this info. The values
 % are 1 = start, 64 = stop. Though not all have 
 % MCV: OTHER FIELDS/ISSUES WE NEED TO FIGURE OUT
@@ -105,7 +105,7 @@ general.dataset_description.EthicsApprovals = 'The Swedish Ethical Review Author
 %% Run loop
 for subindx=1:numel(subjects_and_dates)
   for runindx=1:n_sessions
-    d = find_files(fullfile(raw_path, subjects_and_dates{subindx}), 'rest_ec_mc_avgtrans_tsss_corr95');
+    d = find_files(fullfile(raw_path, subjects_and_dates{subindx}), 'rest_ec_mc_avgtrans_tsss_corr95-raw');
     if isempty(d)
       % for most subjects the data was recorded in a single run
       % in that case run 2 does not exist
