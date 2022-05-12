@@ -10,11 +10,18 @@ import os.path as op
 import pandas as pd
 import mne
 
-raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
+# raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
+raw_path        = '/archive/20079_parkinsons_longitudinal/MEG'
 meg_path        = '/home/mikkel/PD_long/data_share/sourcedata';
 subj_data_path  = '/home/mikkel/PD_long/subj_data/';
 
-skip_subjs =  ['0582', '0604']
+skip_subjs =  []
+
+exceptions = {
+    '0582':'rest_ec_tsss.fif',              # No cHPI
+    '0604':'rest_ec_tsss_mc.fif',           # Error due to too many 'autobad' channels. Manual MaxFilter.
+    }
+
 
 #%% Overwrite
 overwrite=False
@@ -36,8 +43,12 @@ for ii, ss in enumerate(linkdata['subjects']):
     subdir_raw = op.join(raw_path, linkdata['subject_date'][ii] )
     subdir_tmp = op.join(meg_path, linkdata['subject_date'][ii] )
         
-    tmpFiles = [f for f in os.listdir(subdir_raw) if 'rest_ec_mc_avgtrans_tsss_corr95' in f]
-    inFile = tmpFiles[0]
+    if subj in exceptions:
+        tmpFiles = [f for f in os.listdir(subdir_raw) if exceptions[subj] in f]
+    else:            
+        tmpFiles = [f for f in os.listdir(subdir_raw) if 'rest_ec_mc_avgtrans_tsss_corr95' in f]
+        
+    inFile = tmpFiles[0]    
     outFname = op.join(subdir_tmp, inFile[:-4]+'-raw.fif')
     
     # Only run if overwrite = True

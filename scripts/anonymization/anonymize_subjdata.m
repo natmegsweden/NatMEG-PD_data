@@ -93,9 +93,9 @@ for gg = 1:numel(group)
     end
 end
 
-MoCA = table2array(subj_dat2(:,7));
-FAB = table2array(subj_dat2(:,8));
-BDI = table2array(subj_dat2(:,9));
+MoCA = table2array(subj_dat2(:,8));
+FAB = table2array(subj_dat2(:,9));
+BDI = table2array(subj_dat2(:,10));
 
 %% ###########################
 % MISSING UPDRS DATA
@@ -113,4 +113,5 @@ writetable(metadata, fullfile(subj_data_path,'metadata.csv'))
 save(fullfile(subj_data_path, 'linkdata'), 'linkdata');
 writetable(linkdata, fullfile(subj_data_path,'linkdata.csv'))
 disp('done')
+
 %END
