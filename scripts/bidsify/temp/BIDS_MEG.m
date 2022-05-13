@@ -124,7 +124,7 @@ for subindx=1:numel(subjects_and_dates)
     cfg.run      = runindx;
     cfg.dataset  = origname; % this is the intermediate name
     cfg.datatype = 'meg';
-    cfg.proc = 'tsss';
+    cfg.proc = 'tsss-mc';
     
     cfg.participants.age = metadata.agebin(subindx);
     %cfg.participants.handedness = handedness(i);   % THIS INFO IS MISSING
