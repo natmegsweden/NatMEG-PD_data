@@ -19,13 +19,16 @@ close all       % Close all open windows
 clear all       % Clear all variables from the workspace
 restoredefaultpath
 addpath('/home/share/fieldtrip/') % Add the path
-% addpath('~/fieldtrip/fieldtrip') % Add the path
 ft_defaults
 
 raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
 subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data/';
-%bidsroot        = '/home/mikkel/PD_long/data_share/temp'; 
-bidsroot  = '/home/igocom/BIDS'
+if strcmp(java.lang.System.getProperty('user.name'), 'mikkel')
+    bidsroot        = '/home/mikkel/PD_long/data_share/temp'; 
+else
+    bidsroot  = '/home/igocom/BIDS';
+end
+
 %% 
 % 
 % 
@@ -68,16 +71,12 @@ load(fullfile(subj_data_path, 'metadata'));
        
 subjects_and_dates = linkdata.subject_date(1:4);
 
-
-
-%% 
-% *Run loop*
+%% Genral info 
 n_sessions = 1;
 
-%% Genral info 
 % Common for all participants or info written to dataset_description file.
 general = [];
-general.method = 'copy'; % the original data is in a BIDS-compliant format and can simply be copied
+general.method = 'decorate'; % the original data is in a BIDS-compliant format and can simply be copied
 general.bidsroot = bidsroot;
 
 general.InstitutionName                 = 'Karolinska Institute';
@@ -96,8 +95,12 @@ cfg.meg.DewarPosition                 = 'upright'; % REQUIRED. Position of the d
 cfg.meg.SoftwareFilters               = 'n/a'; % REQUIRED. List of temporal and/or spatial software filters applied, orideally key:valuepairsofpre-appliedsoftwarefiltersandtheir parameter values: e.g., {"SSS": {"frame": "head", "badlimit": 7}}, {"SpatialCompensation": {"GradientOrder": Order of the gradient compensation}}. Write "n/a" if no software filters applied.
 cfg.meg.DigitizedLandmarks            = 'true'; % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
 cfg.meg.DigitizedHeadPoints           = 'true'; % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
+
+
+%% Notes [delete]
 % cfg.events = ???  %MCV: I am not sure how to add this info. The values
 % are 1 = start, 64 = stop. Though not all have 
+
 % MCV: OTHER FIELDS/ISSUES WE NEED TO FIGURE OUT
 %cfg.meg.MaxMovement =           % Maxfilter is applied? FT does not read this from file?
 %cfg.meg.AssociatedEmptyRoom =  % Empty room files??
@@ -107,8 +110,7 @@ for subindx=1:numel(subjects_and_dates)
   for runindx=1:n_sessions
     d = find_files(fullfile(raw_path, subjects_and_dates{subindx}), 'rest_ec_mc_avgtrans_tsss_corr95-raw');
     if isempty(d)
-      % for most subjects the data was recorded in a single run
-      % in that case run 2 does not exist
+      warning('Found no files for subj %s',subjects_and_dates{subindx}) 
       continue
     else
       origname = fullfile(raw_path, subjects_and_dates{subindx}, d{1});
@@ -116,6 +118,7 @@ for subindx=1:numel(subjects_and_dates)
 %      disp(anonname); % this is just an intermediate name, the final name will be assigned by data2bids
     end
     
+    % Recording info
     cfg = general;
     cfg.bidsroot = bidsroot;  % write to the present working directory
     cfg.sub      = linkdata.anonym_id{subindx};
@@ -124,13 +127,17 @@ for subindx=1:numel(subjects_and_dates)
     cfg.run      = runindx;
     cfg.dataset  = origname; % this is the intermediate name
     cfg.datatype = 'meg';
-    cfg.proc = 'tsss-mc';
+    cfg.proc     = 'tsss+mc';
     
+    % Subject info
     cfg.participants.age = metadata.agebin(subindx);
     %cfg.participants.handedness = handedness(i);   % THIS INFO IS MISSING
     cfg.participants.clinical_state = metadata.group(subindx);
     cfg.participants.sex = metadata.sex(subindx);
   
+    % Event info
+    
+    % BIDSify
     try
       data2bids(cfg);
     catch
