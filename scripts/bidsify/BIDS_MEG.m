@@ -68,6 +68,8 @@ general.meg.DigitizedLandmarks          = 'true';       % REQUIRED. Boolean ("tr
 general.meg.DigitizedHeadPoints         = 'true';       % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
 general.meg.RecordingType               = 'continuous';
 general.meg.ContinuousHeadLocalization  = 'true';
+%general.meg.SamplingFrequency           = '';           % REQUIRED. Sampling frequency (in Hz) of all the data in the recording, regardless of their type (e.g., 2400)
+%general.meg.PowerLineFrequency          = '';           % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
 
 %% Run loop
 for subindx=1:numel(subjects_and_dates(1:2))
