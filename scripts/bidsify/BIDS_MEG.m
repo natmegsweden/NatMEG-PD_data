@@ -69,7 +69,7 @@ general.meg.DigitizedHeadPoints         = 'true';       % REQUIRED. Boolean ("tr
 general.meg.RecordingType               = 'continuous';
 general.meg.ContinuousHeadLocalization  = 'true';
 %general.meg.SamplingFrequency           = '';           % REQUIRED. Sampling frequency (in Hz) of all the data in the recording, regardless of their type (e.g., 2400)
-%general.meg.PowerLineFrequency          = '';           % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
+general.meg.PowerLineFrequency          = '50';           % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
 
 %% Run loop
 for subindx=1:numel(subjects_and_dates(1:2))
