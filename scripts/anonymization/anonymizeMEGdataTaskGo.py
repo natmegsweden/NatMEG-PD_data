@@ -17,9 +17,12 @@ subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data'
 
 skip_subjs =  []
 
+#%% Filename exceptions
 exceptions = {
-    '0582':'rest_ec_tsss.fif',              # No cHPI
-    '0604':'rest_ec_tsss_mc.fif',           # Error due to too many 'autobad' channels. Manual MaxFilter.
+    '0652': 'go_mc_avgtrans_tsss_corr98',
+    '0632': 'go_tsss_mc.fif',
+    '0609': 'go_tsss_mc.fif',
+    '0606': 'go_tsss_mc.fif'
     }
 
 #%% Overwrite
@@ -44,12 +47,12 @@ for ii, ss in enumerate(linkdata['subjects']):
         
     if subj in exceptions:
         tmpFiles = [f for f in os.listdir(subdir_raw) if exceptions[subj] in f]
+        outFname = op.join(subdir_tmp, exceptions[subj]+'-raw.fif')
+
     else:            
-        tmpFiles = [f for f in os.listdir(subdir_raw) if 'rest_ec_mc_avgtrans_tsss_corr95' in f]
-        
-    inFile = tmpFiles[0]    
-    outFname = op.join(subdir_tmp, inFile[:-4]+'-raw.fif')
-    
+        tmpFiles = [f for f in os.listdir(subdir_raw) if 'go' in f and 'mc_avgtrans_tsss_corr95' in f]
+        outFname = op.join(subdir_tmp, 'go_mc_avgtrans_tsss_corr95-raw.fif')
+
     # Only run if overwrite = True
     if op.exists(outFname) and not overwrite:
         continue
@@ -59,12 +62,17 @@ for ii, ss in enumerate(linkdata['subjects']):
         os.makedirs(subdir_tmp)
 
     # Read MEG data
-    raw = mne.io.read_raw(op.join(subdir_raw, inFile))
-    
+    for jj, ff in enumerate(tmpFiles):
+        if jj==0:
+            raw = mne.io.read_raw_fif(op.join(subdir_raw, ff), on_split_missing='warn')
+        else:
+            raw.append(mne.io.read_raw(op.join(subdir_raw, ff), on_split_missing='warn'))
+
     # Anonymize
-    mne.io.anonymize_info(raw.info)
+    raw.anonymize()
+    #mne.io.anonymize_info(raw.info)
     raw.info['subject_info']['id'] = linkdata['anonym_id'][ii]
-    raw.info['proj_name'] = 'NatMEG-PD'
+    #raw.info['proj_name'] = 'NatMEG-PD'
     raw.info['description'] = 'NatMEG-PD'
 
     # Select channels (remove unused MISC channels)

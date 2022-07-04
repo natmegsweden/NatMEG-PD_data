@@ -9,8 +9,6 @@ import os
 import os.path as op
 import pandas as pd
 import mne
-import datetime
-from mne_bids import write_raw_bids, read_raw_bids, BIDSPath, print_dir_tree
 
 # raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
 raw_path        = '/archive/20079_parkinsons_longitudinal/MEG'
@@ -63,7 +61,10 @@ for ii, ss in enumerate(linkdata['subjects']):
     # Select channels (remove unused MISC channels)
     accChname = ['MISC013', 'MISC014', 'MISC015']
     raw.pick_types(meg=True, eog=True, ecg=True, ias=True, stim=True, syst=True, chpi=True, include=accChname)
-    raw.crop(tmin=0, tmax=120)
+    try:
+        raw.crop(tmin=0, tmax=120)
+    except:
+        print('No cropping')
     
     # Save
     print('Saving '+outFname)

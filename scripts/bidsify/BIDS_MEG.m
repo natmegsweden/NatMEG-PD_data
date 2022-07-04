@@ -20,11 +20,11 @@ restoredefaultpath
 raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
 subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data/';
 if strcmp(java.lang.System.getProperty('user.name'), 'mikkel')
-    bidsroot  = '/home/mikkel/PD_long/data_share/temp';
+    bidsroot = '/home/mikkel/PD_long/data_share/temp';
     addpath('/home/mikkel/fieldtrip/fieldtrip') % Add the path
     addpath('/home/mikkel/jsonlab/jsonlab')
 else
-    bidsroot  = '/home/igocom/BIDS';
+    bidsroot = '/home/igocom/BIDS';
     addpath('/home/share/fieldtrip/') % Add the path
 end
 ft_defaults
@@ -47,17 +47,16 @@ n_sessions = 1;
 
 % Common for all participants or info written to dataset_description file.
 general = [];
-general.method   = 'copy'; % the original data is in a BIDS-compliant format and can simply be copied
+general.method   = 'copy';
 general.bidsroot = bidsroot;
+general.datatype = 'meg';
 
 general.InstitutionName                 = 'Karolinska Institute';
 general.InstitutionalDepartmentName     = 'Department of Clinical Neuroscience';
 general.InstitutionAddress              = 'Nobels väg 9, 171 77, Stockholm, Sweden';
-general.dataset_description.Name        = 'NatMEG_PD_database';
+
+general.dataset_description.Name        = 'NatMEG_PD_dataset';
 general.dataset_description.BIDSVersion = 'v1.6.0';
-
-general.coordsystem.MEGCoordinateSystem     = 'Neuromag';
-
 general.dataset_description.EthicsApprovals = 'The Swedish Ethical Review Authority. DNR 2019-00542';
 
 % MCV: MISSING FIELDS WHERE WE NEED TO FIND THE CORRECT INFO
@@ -68,46 +67,51 @@ general.meg.DigitizedLandmarks          = 'true';       % REQUIRED. Boolean ("tr
 general.meg.DigitizedHeadPoints         = 'true';       % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
 general.meg.RecordingType               = 'continuous';
 general.meg.ContinuousHeadLocalization  = 'true';
-%general.meg.SamplingFrequency           = '';           % REQUIRED. Sampling frequency (in Hz) of all the data in the recording, regardless of their type (e.g., 2400)
-general.meg.PowerLineFrequency          = '50';           % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
+general.meg.PowerLineFrequency          = '50';         % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
 
 %% Run loop
 for subindx=1:numel(subjects_and_dates(1:2))
   for runindx=1:n_sessions
 
     % Filenames
-    origname = fullfile(raw_path, subjects_and_dates{subindx}, [filenames.rest_fname{subindx},'.fif']);
-%     emptyname = fullfile(temp_raw_path, subjects_and_dates{subindx}, filenames.empty_fname{subindx});
+    rs_fname     = fullfile(raw_path, subjects_and_dates{subindx}, [filenames.rest_fname{subindx},'.fif']);
+    go_fname     = '...';
+    pam_fname    = '...';
+    empty_fname  = fullfile(raw_path, subjects_and_dates{subindx}, filenames.empty_fname{subindx});
     
-    % BIDSify rest data
-    % Recording info
+    % General config
     cfg = general;
-    cfg.dataset  = origname;
-    cfg.sub      = linkdata.anonym_id{subindx};
+
+    % Subject info
+    cfg.sub                         = linkdata.anonym_id{subindx};
+    cfg.participants.age            = metadata.agebin(subindx);
+    cfg.participants.clinical_state = metadata.group(subindx);
+    cfg.participants.sex            = metadata.sex(subindx);
+    %cfg.participants.handedness     = handedness(i);   % THIS INFO IS MISSING
+
+    % Recording info
+    cfg.meg.AssociatedEmptyRoom = ['./sub-',linkdata.anonym_id{subindx},'_ses-',num2str(runindx),'_task-noise_proc-tsss.fif'];
+    
+    % Task specific info
+    cfg.meg.DigitizedLandmarks  = 'true';    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
+    cfg.meg.DigitizedHeadPoints = 'true';    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
+
+    % ####################################################################
+    % 1) BIDSify REST data
+    cfg.dataset  = rs_fname;
+    cfg.run      = runindx;
     cfg.task     = 'rest';
     cfg.TaskName = 'rest';
-    cfg.run      = runindx;
-    cfg.datatype = 'meg';
-    if contains(origname, '_mc')
+    
+    % Exceptions
+    if contains(cfg.dataset, '_mc')
         cfg.proc     = 'tsss+mc';
+        cfg.meg.ContinuousHeadLocalization = 'true';
     else
         cfg.proc     = 'tsss';
         cfg.meg.ContinuousHeadLocalization = 'false';
     end
-    
-    cfg.meg.DigitizedLandmarks  = 'true';    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
-    cfg.meg.DigitizedHeadPoints = 'true';    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
 
-
-    % Subject info
-    cfg.participants.age = metadata.agebin(subindx);
-    %cfg.participants.handedness = handedness(i);   % THIS INFO IS MISSING
-    cfg.participants.clinical_state = metadata.group(subindx);
-    cfg.participants.sex = metadata.sex(subindx);
-  
-    % Recording specific
-    cfg.meg.AssociatedEmptyRoom = ['./sub-',linkdata.anonym_id{subindx},'_ses-',num2str(runindx),'_task-noise_proc-tsss.fif'];
-    
     try
       data2bids(cfg);
     catch
@@ -116,27 +120,67 @@ for subindx=1:numel(subjects_and_dates(1:2))
       disp(lasterr)
     end
     
-%     % BIDSify empty room data
-%     cfg = general;
-%     cfg.sub      = linkdata.anonym_id{subindx};
-%     cfg.task     = 'noise';
-%     cfg.TaskName = 'noise';
-%     cfg.run      = runindx;
-%     cfg.datatype = 'meg';
-%     cfg.proc     = 'tsss';
-%     cfg.dataset  = emptyname;
-%     cfg.writejson = 'no'
-%     cfg.meg.ContinuousHeadLocalization = 'false';
-%     cfg.meg.DigitizedLandmarks  = 'false';    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
-%     cfg.meg.DigitizedHeadPoints = 'false';    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
-% 
-%     try
-%       data2bids(cfg);
-%     catch
-%       % this is probably because the output dataset already exists
-%       % this is due to running the script multiple times
-%       disp(lasterr)
-%     end
+    % ####################################################################
+    % 2) BIDSify GO data ###
+    cfg.dataset  = go_fname;
+    cfg.run      = runindx;
+    cfg.task     = 'go';
+    cfg.TaskName = 'go';
     
+    % Exceptions
+    if contains(cfg.dataset, '_mc')
+        cfg.proc     = 'tsss+mc';
+        cfg.meg.ContinuousHeadLocalization = 'true';
+    else
+        cfg.proc     = 'tsss';
+        cfg.meg.ContinuousHeadLocalization = 'false';
+    end
+    
+    try
+      data2bids(cfg);
+    catch
+      disp(lasterr)
+    end    
+
+    % ####################################################################
+    % 3) BIDSify PASSIVE data ###
+    cfg.dataset  = go_fname;
+    cfg.run      = runindx;
+    cfg.task     = 'passive';
+    cfg.TaskName = 'passive';
+    
+    % Exceptions
+    if contains(cfg.dataset, '_mc')
+        cfg.proc     = 'tsss+mc';
+        cfg.meg.ContinuousHeadLocalization = 'true';
+    else
+        cfg.proc     = 'tsss';
+        cfg.meg.ContinuousHeadLocalization = 'false';
+    end
+    
+    try
+      data2bids(cfg);
+    catch
+      disp(lasterr)
+    end    
+    
+    % ####################################################################
+    % 4) BIDSify EMPTY ROOM data
+    cfg.dataset  = empty_fname;
+    cfg.task     = 'noise';
+    cfg.TaskName = 'noise';
+    cfg.proc     = 'tsss';
+    cfg.meg.DigitizedLandmarks         = 'false';    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
+    cfg.meg.DigitizedHeadPoints        = 'false';    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
+    cfg.meg.ContinuousHeadLocalization = 'false';
+    cfg.meg.AssociatedEmptyRoom = [];
+    
+    try
+      data2bids(cfg);    
+    catch
+      disp(lasterr)
+    end
+    
+    clear cfg
   end % for each run
 end % for each subject
