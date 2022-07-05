@@ -15,28 +15,29 @@ raw_path        = '/archive/20079_parkinsons_longitudinal/MEG'
 meg_path        = '/home/mikkel/PD_long/data_share/sourcedata'
 subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data'
 
-skip_subjs =  []
-
-#%% Filename exceptions
-exceptions = {
-    '0652': 'go_mc_avgtrans_tsss_corr98',
-    '0632': 'go_tsss_mc.fif',
-    '0609': 'go_tsss_mc.fif',
-    '0606': 'go_tsss_mc.fif'
-    }
-
-#%% Overwrite
-overwrite=False
 
 #%% Read data
 linkdata = pd.read_csv(op.join(subj_data_path, 'linkdata.csv'))
 filenames = pd.read_csv(op.join(subj_data_path, 'filenames.csv'))
 
+#%% Filename exceptions
+skip_subjs =  []
+
+exceptions = {
+    '0606': 'go_tsss_mc.fif',
+    '0609': 'go_tsss_mc.fif',
+    '0632': 'go_tsss_mc.fif',
+    '0652': 'go_mc_avgtrans_tsss_corr98'
+    }
+
+#%% Overwrite
+overwrite=True
+
 #%% RUN
 for ii, ss in enumerate(linkdata['subjects']):
     subj = '0'+str(ss)
     sid  = str(linkdata['anonym_id'][ii]).zfill(3)
-    print(subj)
+    print(subj, ii)
     
     if subj in skip_subjs:
         continue
@@ -47,7 +48,7 @@ for ii, ss in enumerate(linkdata['subjects']):
         
     if subj in exceptions:
         tmpFiles = [f for f in os.listdir(subdir_raw) if exceptions[subj] in f]
-        outFname = op.join(subdir_tmp, exceptions[subj]+'-raw.fif')
+        outFname = op.join(subdir_tmp, exceptions[subj][:-4]+'-raw.fif')
 
     else:            
         tmpFiles = [f for f in os.listdir(subdir_raw) if 'go' in f and 'mc_avgtrans_tsss_corr95' in f]

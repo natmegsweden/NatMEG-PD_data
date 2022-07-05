@@ -45,7 +45,7 @@ for ii, ss in enumerate(linkdata['subjects']):
         
     if subj in exceptions:
         tmpFiles = [f for f in os.listdir(subdir_raw) if exceptions[subj] in f]
-        outFname = op.join(subdir_tmp, exceptions[subj]+'-raw.fif')
+        outFname = op.join(subdir_tmp, exceptions[subj][:-4]+'-raw.fif')
 
     else:            
         tmpFiles = [f for f in os.listdir(subdir_raw) if 'passive' in f and 'mc_avgtrans_tsss_corr95' in f]
