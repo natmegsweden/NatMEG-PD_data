@@ -3,7 +3,9 @@
 % <Ref>
 %
 % Import databases with subject id and clinical data. Generate a key for
-% pseudonymization. Save as database and csv.
+% pseudonymization. Save as database and csv. NB! This script should only
+% ever be run once to generate the key. Otherwise we have to redo the
+% entire procedure with a new random key.
 
 subj_data_path  = '/home/mikkel/PD_long/subj_data/';
 
