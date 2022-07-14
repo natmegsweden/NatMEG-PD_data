@@ -39,6 +39,8 @@ tmp4['disease_dur'] = tmp4.MEG_dateY - tmp4.Initial_diagnosis
 newdat = tmp4[['anonym_id', 'hand', 'LEDD', 'disease_dur', 'H_Y_STAGE', 'UPDRS_TOTAL', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7']]
 
 metadata2 = pd.merge(metadata, newdat)
+alldata = tmp4.drop('anonym_id', axis=1)
 
 # Save
 metadata2.to_csv('/home/mikkel/PD_long/subj_data/metadata.csv', index=False)
+alldata.to_csv('/home/mikkel/PD_long/subj_data/mergeddata.csv', index=False)
