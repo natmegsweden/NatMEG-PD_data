@@ -11,7 +11,7 @@ restoredefaultpath
 raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
 subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data/';
 if strcmp(java.lang.System.getProperty('user.name'), 'mikkel')
-    bidsroot = '/home/mikkel/PD_long/data_share/temp';
+    bidsroot = '/home/mikkel/PD_long/data_share/BIDS_data';
     addpath('/home/mikkel/fieldtrip/fieldtrip') % Add the path
     addpath('/home/mikkel/jsonlab/jsonlab')
 else
@@ -61,7 +61,7 @@ general.meg.ContinuousHeadLocalization = 'true';
 general.meg.PowerLineFrequency         = '50';         % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
 
 %% Run loop
-for subindx = 1:numel(subjects_and_dates(1:2))
+for subindx = 1:numel(subjects_and_dates)
   for runindx = 1:n_sessions
 
     % Input filenames
