@@ -8,12 +8,13 @@ close all       % Close all open windows
 clear all       % Clear all variables from the workspace
 restoredefaultpath
 
-raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
+% raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
 subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data/';
 if strcmp(java.lang.System.getProperty('user.name'), 'mikkel')
     bidsroot = '/home/mikkel/PD_long/data_share/BIDS_data';
     addpath('/home/mikkel/fieldtrip/fieldtrip') % Add the path
     addpath('/home/mikkel/jsonlab/jsonlab')
+    raw_path = '/home/mikkel/PD_long/data_share/sourcedata';
 else
     bidsroot = '/home/igocom/BIDS';
     addpath('/home/share/fieldtrip/') % Add the path
@@ -25,10 +26,11 @@ ft_defaults
 % other script how it is generated). Import and use for the bidsify loop.
      
 load(fullfile(subj_data_path, 'linkdata'));
-metadata = readtable(fullfile(subj_data_path, 'metadata.csv'));
+metadata = readtable(fullfile(subj_data_path, 'metadata2.csv'));
 filenames = readtable(fullfile(subj_data_path, 'filenames.csv'), 'Delimiter', ',' );
 
-linkdata = sortrows(linkdata, 3);
+% Reorder according to anonymous id to be safe.
+linkdata = sortrows(linkdata, 1);
 filenames = sortrows(filenames, 3);
 subjects_and_dates = linkdata.subject_date;
 
@@ -67,16 +69,17 @@ for subindx = 1:numel(subjects_and_dates)
     % Input filenames
     rs_fname     = fullfile(raw_path, subjects_and_dates{subindx}, [filenames.rest_fname{subindx},'.fif']);
     go_fname     = fullfile(raw_path, subjects_and_dates{subindx}, filenames.go_fname{subindx});
-    pam_fname    = fullfile(raw_path, subjects_and_dates{subindx}, filenames.pas_fname{subindx});
+    pas_fname    = fullfile(raw_path, subjects_and_dates{subindx}, filenames.pas_fname{subindx});
     empty_fname  = fullfile(raw_path, subjects_and_dates{subindx}, filenames.empty_fname{subindx});
     
+
     % General config for subject
     cfg_sub = general;
     cfg_sub.sub                      = linkdata.anonym_id{subindx};
 
     % Subject info
-    cfg_sub.participants.age          = metadata.agebin(subindx);
     cfg_sub.participants.group        = metadata.group(subindx);
+    cfg_sub.participants.age          = metadata.agebin(subindx);
     cfg_sub.participants.sex          = metadata.sex(subindx);
     cfg_sub.participants.handedness   = metadata.hand(subindx);
     cfg_sub.participants.disease_dur  = metadata.disease_dur(subindx);
@@ -150,7 +153,7 @@ for subindx = 1:numel(subjects_and_dates)
     % ####################################################################
     % 3) BIDSify PASSIVE task data
     cfg = cfg_sub;
-    cfg.dataset  = go_fname;
+    cfg.dataset  = pas_fname;
     cfg.run      = runindx;
     cfg.task     = 'passive';
     cfg.TaskName = 'passive';

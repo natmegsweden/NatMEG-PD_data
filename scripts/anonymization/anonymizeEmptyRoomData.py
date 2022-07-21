@@ -4,27 +4,24 @@
 Created on Sun May 22 15:14:45 2022
 @author: mikkel
 """
-
 import os
 import os.path as op
 import pandas as pd
 import mne
 
-# raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
 raw_path        = '/archive/20079_parkinsons_longitudinal/MEG'
 meg_path        = '/home/mikkel/PD_long/data_share/sourcedata'
 subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data'
-bids_root       = '/home/mikkel/PD_long/data_share/temp'
 
 skip_subjs =  []
 
 #%% Overwrite
-overwrite=False
+overwrite=True
 
 #%% Read data
-alldata = pd.read_csv(op.join(subj_data_path, 'metadata.csv'))
 linkdata = pd.read_csv(op.join(subj_data_path, 'linkdata.csv'))
 filenames = pd.read_csv(op.join(subj_data_path, 'filenames.csv'))
+fname_dict = dict(zip(filenames['subjects'], filenames['empty_fname']))
 
 #%% RUN
 for ii, ss in enumerate(linkdata['subjects']):
@@ -36,10 +33,10 @@ for ii, ss in enumerate(linkdata['subjects']):
         continue
 
     # I/O
-    subdir_raw = op.join(raw_path, linkdata['subject_date'][ii] )
-    subdir_tmp = op.join(meg_path, linkdata['subject_date'][ii] )
+    subdir_raw = op.join(raw_path, linkdata['subject_date'][ii])
+    subdir_tmp = op.join(meg_path, linkdata['subject_date'][ii])
 
-    outFname = op.join(subdir_tmp, filenames['empty_fname'][ii])
+    outFname = op.join(subdir_tmp, fname_dict[ss])
     
     # Only run if overwrite = True
     if op.exists(outFname) and not overwrite:
@@ -50,7 +47,7 @@ for ii, ss in enumerate(linkdata['subjects']):
         os.makedirs(subdir_tmp)
 
     # Read MEG data
-    raw = mne.io.read_raw(op.join(subdir_raw, filenames['empty_fname'][ii]))
+    raw = mne.io.read_raw(op.join(subdir_raw, fname_dict[ss]))
     
     # Anonymize
     mne.io.anonymize_info(raw.info)
@@ -69,16 +66,6 @@ for ii, ss in enumerate(linkdata['subjects']):
     # Save
     print('Saving '+outFname)
     raw.save(outFname, overwrite=overwrite)
-    # raw = mne.io.read_raw(outFname)
-    
-    # time_change = datetime.timedelta(days=ii)
-    # raw.set_meas_date(raw.info['meas_date'] + time_change)
-    # er_date = raw.info['meas_date'].strftime('%Y%m%d')
+    del raw
 
-    # # er_bids_path = BIDSPath(subject=str(linkdata['anonym_id'][ii]), session=str(1), task='noise', processing='tsss', root=bids_root)
-    # er_bids_path = BIDSPath(subject='emptyroom', session=er_date, task='noise', root=bids_root)
-    # write_raw_bids(raw, er_bids_path, overwrite=overwrite)
-
-
-    # Save
-    
+#END    

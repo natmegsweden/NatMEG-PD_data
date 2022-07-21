@@ -7,6 +7,12 @@
 % ever be run once to generate the key. Otherwise we have to redo the
 % entire procedure with a new random key.
 
+% Should the process overwite existing linkdata? If yes, then all previous
+% BIDSification will be invalid!
+overwrite = 1;
+
+%% Read data
+% raw data file
 subj_data_path  = '/home/mikkel/PD_long/subj_data/';
 
 % Read subjects
@@ -95,25 +101,21 @@ for gg = 1:numel(group)
     end
 end
 
-MoCA = table2array(subj_dat2(:,8));
-FAB = table2array(subj_dat2(:,9));
-BDI = table2array(subj_dat2(:,10));
-
-%% ###########################
-% MISSING UPDRS DATA
-% MISSING LEDD DATA
-% MISSING DISEASE DURATION
-% Possibly add this manually to CSV file or combine in other script.
+MoCA = table2array(subj_dat2(:,11));
+FAB = table2array(subj_dat2(:,12));
+BDI = table2array(subj_dat2(:,13));
 
 %% Combine as table
-linkdata = table(subjects, subject_date, anonym_id);
+linkdata = sortrows(table(anonym_id, subject_date, subjects));
 metadata = sortrows(table(anonym_id, sex, agebin, group, MoCA, FAB, BDI));
 
 %% Save
-save(fullfile(subj_data_path, 'metadata'), 'metadata');
-writetable(metadata, fullfile(subj_data_path,'metadata.csv'))
-save(fullfile(subj_data_path, 'linkdata'), 'linkdata');
-writetable(linkdata, fullfile(subj_data_path,'linkdata.csv'))
-disp('done')
+if overwrite
+    save(fullfile(subj_data_path, 'metadata'), 'metadata');
+    writetable(metadata, fullfile(subj_data_path,'metadata.csv'))
+    save(fullfile(subj_data_path, 'linkdata'), 'linkdata');
+    writetable(linkdata, fullfile(subj_data_path,'linkdata.csv'))
+    disp('done'); 
+end
 
 %END
