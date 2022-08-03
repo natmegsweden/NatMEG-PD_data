@@ -9,12 +9,13 @@ clear all       % Clear all variables from the workspace
 restoredefaultpath
 
 % raw_path        = '/archive/20080_PD_EBRAINS/ORIGINAL/MEG';
-subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data/';
+% subj_data_path  = '/archive/20080_PD_EBRAINS/ORIGINAL/subj_data/';
 if strcmp(java.lang.System.getProperty('user.name'), 'mikkel')
     bidsroot = '/home/mikkel/PD_long/data_share/BIDS_data';
     addpath('/home/mikkel/fieldtrip/fieldtrip') % Add the path
     addpath('/home/mikkel/jsonlab/jsonlab')
     raw_path = '/home/mikkel/PD_long/data_share/sourcedata';
+    subj_data_path = '/home/mikkel/PD_long/subj_data/';
 else
     bidsroot = '/home/igocom/BIDS';
     addpath('/home/share/fieldtrip/') % Add the path
@@ -26,7 +27,7 @@ ft_defaults
 % other script how it is generated). Import and use for the bidsify loop.
      
 load(fullfile(subj_data_path, 'linkdata'));
-metadata = readtable(fullfile(subj_data_path, 'metadata2.csv'));
+metadata = readtable(fullfile(subj_data_path, 'metadata.csv'));
 filenames = readtable(fullfile(subj_data_path, 'filenames.csv'), 'Delimiter', ',' );
 
 % Reorder according to anonymous id to be safe.
@@ -60,10 +61,10 @@ general.meg.DigitizedLandmarks         = 'true';       % REQUIRED. Boolean ("tru
 general.meg.DigitizedHeadPoints        = 'true';       % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
 general.meg.RecordingType              = 'continuous';
 general.meg.ContinuousHeadLocalization = 'true';
-general.meg.PowerLineFrequency         = '50';         % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
+general.meg.PowerLineFrequency         = 50;         % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
 
 %% Run loop
-for subindx = 1:numel(subjects_and_dates)
+for subindx = 91:numel(subjects_and_dates)
   for runindx = 1:n_sessions
 
     % Input filenames
@@ -72,7 +73,6 @@ for subindx = 1:numel(subjects_and_dates)
     pas_fname    = fullfile(raw_path, subjects_and_dates{subindx}, filenames.pas_fname{subindx});
     empty_fname  = fullfile(raw_path, subjects_and_dates{subindx}, filenames.empty_fname{subindx});
     
-
     % General config for subject
     cfg_sub = general;
     cfg_sub.sub                      = linkdata.anonym_id{subindx};
@@ -80,7 +80,7 @@ for subindx = 1:numel(subjects_and_dates)
     % Subject info
     cfg_sub.participants.group        = metadata.group(subindx);
     cfg_sub.participants.age          = metadata.agebin(subindx);
-    cfg_sub.participants.sex          = metadata.sex(subindx);
+    cfg_sub.participants.sex          = metadata.Sex(subindx);
     cfg_sub.participants.handedness   = metadata.hand(subindx);
     cfg_sub.participants.disease_dur  = metadata.disease_dur(subindx);
     cfg_sub.participants.LEDD         = metadata.LEDD(subindx);
