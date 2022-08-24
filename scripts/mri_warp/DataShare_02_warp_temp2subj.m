@@ -117,10 +117,7 @@ for ii = 1:length(subj_mri)
         close all
     end
 
-    % Save
-    % MCV: the output format is not BIDS compatible... either we make it BIDS
-    % compatible here or run a second script. This also saves in .mat format
-    % but probably need to be .nii or orther standard format. CHECK UP.
+    % Save. The output format is not BIDS compatible.
     fprintf('saving...')
     save(outfname_mat, 'mri_warptmp')
     

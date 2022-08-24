@@ -1,0 +1,134 @@
+{
+    "age": {
+        "Description": "age of the participant",
+        "Units": "years"
+    },
+    "sex": {
+        "Description": "Biological sex of the participant as",
+        "Levels": {
+            "M": "male",
+            "F": "female"
+        }
+    },
+    "handedness": {
+        "Description": "handedness of the participant as reported by the participant",
+        "Levels": {
+            "left": "left",
+            "right": "right"
+        }
+    },
+    "group": {
+        "Description": "experimental group the participant belonged to",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "disease_dur": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "LEDD": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "BDI": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "MoCA": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "FAB": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "HY_stage": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III_f1": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III_f2": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III_f3": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III_f4": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III_f5": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III_f6": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+    "UPDRS_III_f7": {
+        "Description": "",
+        "Levels": {
+            "": "",
+            "": ""
+        }
+    },
+}
+
+
+
+
+
+
+
+
+

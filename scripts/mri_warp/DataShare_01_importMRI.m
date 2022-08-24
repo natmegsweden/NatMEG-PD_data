@@ -9,6 +9,7 @@
 
 addpath('/home/mikkel/PD_long/data_share/scripts')
 [dirs, subj_mri] = DS_SETUP();
+overwrite = 0;
 
 noexits = [];
 
@@ -31,7 +32,11 @@ for ii = 1:length(subj_mri)
 
     if ~exist(outdir, 'dir'); mkdir(outdir); end
     
-    
+    if exist(outfname, 'file') && ~overwrite
+        fprintf('Subj %s previously imported', subj)
+        continue
+    end
+  
     % Check if MRI previously imported
     if exist(oldfname, 'file')
         fprintf('Subj %s previously imported.\nWill copy: \n%s -> %s ...', subj, oldfname, outfname)

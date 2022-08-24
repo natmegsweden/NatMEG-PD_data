@@ -41,7 +41,7 @@ ft_defaults
 % subjects = subj_names(idxer);
 
 % Read MRI sequence info
-mri_file = fullfile(dirs.subj_data_path, 'mri_seqs.csv');
+mri_file = fullfile(dirs.subj_data_path, 'mri_seqs.xlsx');
 
 all_dat = readtable(mri_file);
 subj_names = table2cell(all_dat(:,1));
