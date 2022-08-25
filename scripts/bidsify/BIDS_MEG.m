@@ -64,7 +64,7 @@ general.meg.ContinuousHeadLocalization = 'true';
 general.meg.PowerLineFrequency         = 50;         % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
 
 %% Run loop
-for subindx = 91:numel(subjects_and_dates)
+for subindx = 1:numel(subjects_and_dates)
   for runindx = 1:n_sessions
 
     % Input filenames
