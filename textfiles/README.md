@@ -155,7 +155,6 @@ Some examples:
 
 #### Clinical data and metadata
 - Participant 093 had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on UPDRS.
-- Participant 0532 [REPLACE] is missing UPDRS item 3.16 [UNKOWN REASON - LOOK UP]
 
 #### MEG recordings and data
 - Task "Passive" were not acquired for participants 020, 034, 062, 092 117, and 126.
