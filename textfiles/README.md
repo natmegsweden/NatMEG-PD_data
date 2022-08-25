@@ -21,13 +21,14 @@ More info here: https://neurostars.org/t/where-in-a-bids-dataset-should-i-put-no
 - [ ] Data user agreement
 
 If the dataset requires a data user agreement, link to the relevant information.
+Copy/paste when decided
 
-- [ ] Contact persons
+- [x] Contact persons
 
 Indicate the name and contact details (email and ORCID) of the person responsible for additional information.
 
 * Mikkel C. Vinding, email: mikkel.vinding@ki.se, ORCID:  https://orcid.org/0000-0002-7954-2886
-* Daniel Lundqvist
+* Daniel Lundqvist, email: daniel.lundqvist@ki.se
 
 
 - [ ] Practical information to access the data
@@ -41,8 +42,10 @@ http://handbook.datalad.org/en/latest/basics/101-180-FAQ.html#how-can-i-help-oth
 ## Overview
 
 - [ ] Project name (if relevant)
+The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset (NatMEG-PDD)
 
 - [ ] Year(s) that the project ran
+Data collected April 2019 - March 2020
 
 If no `scans.tsv` is included, this could at least cover when the data acquisition
 starter and ended. Local time of day is particularly relevant to subject state.
@@ -151,11 +154,12 @@ Some examples:
 - Differences (even slight) in protocol for certain participants.
 
 #### Clinical data and metadata
-- Subject 0594 [REPLACE] had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on UPDRS.
-- Subject 0532 [REPLACE] is missing UPDRS item 3.16 [UNKOWN REASON - LOOK UP]
+- Participant 093 had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on UPDRS.
+- Participant 0532 [REPLACE] is missing UPDRS item 3.16 [UNKOWN REASON - LOOK UP]
 
 #### MEG recordings and data
-- [PET MEG participants do not have passive]
+- Task "Passive" were not acquired for participants 020, 034, 062, 092 117, and 126.
+- cHPI was not turned on during "Rest" for participant 025. Maxfilter run with tSSS but no compensation for head movement.
 
 ##### Resting-state
 - Alternative/missing triggers...
@@ -167,8 +171,9 @@ Some examples:
 - Alternative/missing triggers...
 
 #### MRI recordings and data
-- [all those that were cancelled]
-
+- MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because cancellation due to COVID-19 lockdown of the MR scanner.
+- MRI is missing for participant 061 due to corrupted source files.
+- Participant 070 did not do MRI.
 
 ### Notes
 
