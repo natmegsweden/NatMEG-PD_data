@@ -65,12 +65,9 @@ Summary:
 
 134 - Subjects, 1 - Session
 
-Available Tasks:
+Available Tasks: Resting-state, Passive movements, Go task
 
-Resting-state, Passive movements, Go task
-
-Available Modalities:
-MEG
+Available Modalities: Magnetoencephalography (MEG)
 
 - [ ] Independent variables
 
