@@ -109,6 +109,8 @@ using a group column.
 - [ ] Subject inclusion criteria (if relevant)
 - [ ] Subject exclusion criteria (if relevant)
 
+The study includes 80 PD patients (age 44-85; 32 female) and 71 healthy controls (age 46-78; 46 female). Subjects from the patient group were recruited from the Parkinson's Outpatient Clinic, Department of Neurology, Karolinska University Hospital, Stockholm, Sweden. Recruitment of healthy controls was conducted via advertising or amongst spouses of PD patients. The criteria of inclusion for the PD group were a PD diagnosis according to the United Kingdom Parkinson's Disease Society Brain Bank Diagnostic Criteria with Hoehn and Yahr stage 1-3. Inclusion criteria for the control group were the absence of PD diagnosis, absence of any form of movement disorder, and no history of neurological diseases, psychiatric disorders, or epilepsy. Exclusion criteria for both groups were a diagnosis of major depression, dementia, history or presence of schizophrenia, bipolar disorder, epilepsy, or history of alcoholism or drug addiction according to the Diagnostic and Statistical Manual of Mental Disorders. (Vinding et.al. 2022)
+
 ### Apparatus
 
 A summary of the equipment and environment setup for the
