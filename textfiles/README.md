@@ -61,9 +61,7 @@ these goals.
 An easy thing to add is the output of the bids-validator that describes what type of
 data and the number of subject one can expect to find in the dataset.
 
-Summary:
-
-134 - Subjects, 1 - Session
+Summary: 134 - Subjects, 1 - Session
 
 Available Tasks: Resting-state, Passive movements, Go task
 
