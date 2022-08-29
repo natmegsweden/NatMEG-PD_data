@@ -112,9 +112,13 @@ A summary of the equipment and environment setup for the
 experiment. For example, was the experiment performed in a shielded room
 with the subject seated in a fixed position.
 
+MEG recordings were done in a two-layer magnetically shielded room (Vacuumschmelze GmbH) using Neuromag TRIUX 306-channel whole-head system with 102 magnetometers and 102 pairs of planar gradiometers. The recordings were sampled at 1000 Hz with an online 0.1 Hz high-pass filter and 330 Hz low-pass filter (Vinding et.al. 2022).
+
 ### Initial setup
 
 A summary of what setup was performed when a subject arrived.
+
+Head-position indicator coils (HPI) were attached to subjects' heads to measure head position and head movement inside the MEG scanner. The Polhemus Fastrak motion tracker was used for the digitalization of HPI and uniformly sampled additional points of subjects' head shapes. MEG was recorded simultaneously with vertical and horizontal electrooculogram (EOG) and electrocardiogram (ECG) (Vinding et.al. 2022). 
 
 ### Task organization
 
@@ -130,6 +134,9 @@ separated into different files.)
 ### Task details
 
 As much detail as possible about the task and the events that were recorded.
+
+Resting-state:
+During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed (Vinding et.al. 2022).
 
 ### Additional data acquired
 
