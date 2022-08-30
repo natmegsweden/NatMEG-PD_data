@@ -139,7 +139,7 @@ Resting-state:
 During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The PD patients participated in the study while receiving their usual prescribed dose of medication (Vinding et.al. 2022).
 
 Passive: 
-Participants had their index finger on pneumatic artificial muscles (PAM) that induced proprioceptive feedback by brief movement (200 ms) inducing passive movements every 3.5-4.0 seconds. MEG recordings in the MSR were conducted twice: first in OFF medication condition and then after an hour’s break in ON (Vinding et. al. 2019).
+Participants had their index finger on pneumatic artificial muscles (PAM) that induced proprioceptive feedback by brief movement (200 ms) inducing passive movements every 3.5-4.0 seconds. Electromyography (EMG) was recorded on the forearms above the flexor carpi radialis with bipolar Ag/AgC electrodes placed 7–8 cm apart. MEG recordings in the MSR were conducted twice: first in OFF medication condition and then after an hour’s break in ON (Vinding et. al. 2019).
 
 ### Additional data acquired
 
