@@ -136,7 +136,7 @@ separated into different files.)
 As much detail as possible about the task and the events that were recorded.
 
 Resting-state:
-During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed (Vinding et.al. 2022).
+During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The PD patients participated in the study while receiving their usual prescribed dose of medication (Vinding et.al. 2022).
 
 ### Additional data acquired
 
