@@ -112,7 +112,7 @@ A summary of the equipment and environment setup for the
 experiment. For example, was the experiment performed in a shielded room
 with the subject seated in a fixed position.
 
-MEG recordings were done in a two-layer magnetically shielded room (Vacuumschmelze GmbH) using Neuromag TRIUX 306-channel whole-head system with 102 magnetometers and 102 pairs of planar gradiometers. The recordings were sampled at 1000 Hz with an online 0.1 Hz high-pass filter and 330 Hz low-pass filter (Vinding et.al. 2022).
+MEG recordings were done in a two-layer magnetically shielded room (MSR) (Vacuumschmelze GmbH) using Neuromag TRIUX 306-channel whole-head system with 102 magnetometers and 102 pairs of planar gradiometers. The recordings were sampled at 1000 Hz with an online 0.1 Hz high-pass filter and 330 Hz low-pass filter (Vinding et.al. 2022).
 
 ### Initial setup
 
@@ -137,6 +137,9 @@ As much detail as possible about the task and the events that were recorded.
 
 Resting-state:
 During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The PD patients participated in the study while receiving their usual prescribed dose of medication (Vinding et.al. 2022).
+
+Passive: 
+Participants had their index finger on pneumatic artificial muscles (PAM) that induced proprioceptive feedback by brief movement (200 ms) inducing passive movements every 3.5-4.0 seconds. MEG recordings in the MSR were conducted twice: first in OFF medication condition and then after an hour’s break in ON (Vinding et. al. 2019).
 
 ### Additional data acquired
 
