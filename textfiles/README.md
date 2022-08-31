@@ -56,6 +56,12 @@ A paragraph giving an overview of the experiment. This should include the
 goals or purpose and a discussion about how the experiment tries to achieve
 these goals.
 
+The experiment consists of MEG recording during three tasks - resting state, passive movements, and go.
+
+The goal of the resting-state MEG recordings is to examine how features of cortical somatosensory oscillatory activity differ between PD patients and healthy controls across age and gender and the relation of these features to PD motor symptoms. Resting-state recordings were performed for three minutes while participants sat relaxed with their eyes closed.
+
+The Passive movements study aimed to measure cortical activity related to the processing of proprioceptive signals affected by PD in comparison to healthy control. The passive movements task was performed with the help of pneumatic artificial muscles (PAM) to induce proprioceptive feedback by brief passive movements (200 ms) of the index finger every 3.5-4.0 seconds.
+
 - [ ] Description of the contents of the dataset
 
 An easy thing to add is the output of the bids-validator that describes what type of
