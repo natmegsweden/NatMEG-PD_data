@@ -58,9 +58,9 @@ these goals.
 
 The experiment consists of MEG recording during three tasks - resting state, passive movements, and go.
 
-The goal of the resting-state MEG recordings is to examine how features of cortical somatosensory oscillatory activity differ between PD patients and healthy controls across age and gender and the relation of these features to PD motor symptoms. Resting-state recordings were performed for three minutes while participants sat relaxed with their eyes closed.
+The goal of the resting-state MEG recordings is to examine how features of cortical somatosensory oscillatory activity differ between PD patients and healthy controls across age and gender and the relation of these features to PD motor symptoms. Resting-state recordings were performed for three minutes while participants sat relaxed with their eyes closed (Vinding et.al. 2022).
 
-The Passive movements study aimed to measure cortical activity related to the processing of proprioceptive signals affected by PD in comparison to healthy control. The passive movements task was performed with the help of pneumatic artificial muscles (PAM) to induce proprioceptive feedback by brief passive movements (200 ms) of the index finger every 3.5-4.0 seconds.
+The Passive movements study aimed to measure cortical activity related to the processing of proprioceptive signals affected by PD in comparison to healthy control. The passive movements task was performed with the help of pneumatic artificial muscles (PAM) to induce proprioceptive feedback by brief passive movements (200 ms) of the index finger every 3.5-4.0 seconds (Vinding et.al. 2019).
 
 - [ ] Description of the contents of the dataset
 
