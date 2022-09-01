@@ -1,70 +1,70 @@
 {
 	"age": {
 		"Description": "Age-bin of the participant",
-     	"Units": "years",
+     		"Units": "years",
 		"Levels": {
-	      "41-45": "41-45",
-         "46-50": "46-50",
+	      		"41-45": "41-45",
+         		"46-50": "46-50",
 			"51-55": "51-55",
 			"56-60": "56-60",
 			"61-65": "61-65",
 			"66-70": "66-70",
 			"71-75": "71-75",
 			"76-80": "76-80"
-        }
-   },
- 	"sex": {
-     "Description": "Biological sex of the participant",
-     "Levels": {
-         "M": "male",
-         "F": "female"
+        	}
+   	},
+	"sex": {
+		"Description": "Biological sex of the participant",
+     		"Levels": {
+         		"M": "male",
+         		"F": "female"
 	 	}
-   },
+   	},
 	"handedness": {
 		"Description": "handedness of the participant as reported by the participant",
 		"Levels": {
 			"left": "left",
-         "right": "right"
+         		"right": "right"
 		}
 	},
 	"group": {
-      "Description": "experimental group the participant belonged to",
+      		"Description": "experimental group the participant belonged to",
 		"Levels": {
-         "Control": "Control",
-         "Patient": "Patient"
-      }
-   },
+         		"Control": "Control",
+         		"Patient": "Patient"
+      		}
+   	},
 	"disease_dur": {
 		"Description": "Parkinson’s disease duration in whole years since first diagnosis (patients only)",
 		"Units": "years"
-   },
+   	},
 	"LEDD": {
-	   "Description": "Levodopa equivalent daily dose (patients only)",
+	   	"Description": "Levodopa equivalent daily dose (patients only)",
 		"TermURL": "https://doi.org/10.1002/mds.23429",
 		"Units": "mg"
-   },
-   "BDI": {
-     	"Description": "Becks Depression Inventory II",
+   	},
+	"BDI": {
+     		"Description": "Becks Depression Inventory II",
 		"TermURL": "https://psycnet.apa.org/doi/10.1037/t00742-000",
-   },
-   "MoCA": {
+	},
+   	"MoCA": {
 		"Description": "Montreal Cognitive Assessment",
 		"TermURL": "www.mocatest.org",
-   },
+   	},
 	"FAB": {
 		"Description": "Frontal Assessment Battery",
-      "TermURL": "https://doi.org/10.1212/WNL.55.11.1621"
-   },
+      		"TermURL": "https://doi.org/10.1212/WNL.55.11.1621"
+   	},
 	"HY_stage": { 
-    	"Description": "Hoehn & Yahr stage (patients only)",
+    		"Description": "Hoehn & Yahr stage (patients only)",
 		"TermURL": "https://doi.org/10.1212/WNL.17.5.427",
-     	"Levels": {
-         "0": "0",
-         "1": "1",
+     		"Levels": {
+         		"0": "0",
+         		"1": "1",
 			"2": "2",
 			"3": "3"
 		}
-   },
+   	},
 	"UPDRS_III": {
 		"Description": "Total score on Movement Disorder Society-sponsored revision of the Unified Parkinson’s Disease Rating Scale, part III (MDS-UPDRS-III; patients only)",
 		"TermURL":  "DOI: 10.1002/mds.22340"
@@ -73,28 +73,28 @@
 		"Description": "Midline function, MDS-UPDRS-III (patients only)",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
 	},
-   "UPDRS_III_f2": {
+   	"UPDRS_III_f2": {
 		"Description": "Test tremor",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
-   },
+   	},
 	"UPDRS_III_f3": {
 		"Description": "Rigidity",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
-   },
-   "UPDRS_III_f4": {
+   	},
+   	"UPDRS_III_f4": {
 		"Description": "Bradykinesia right upper extremity",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
-   },
-   "UPDRS_III_f5": {
-      "Description": "Bradykinesia left upper extremity",
+   	},
+   	"UPDRS_III_f5": {
+      		"Description": "Bradykinesia left upper extremity",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
-   },
-   "UPDRS_III_f6": {
-      "Description": "Postural and kinetic tremors",
+   	},
+   	"UPDRS_III_f6": {
+      		"Description": "Postural and kinetic tremors",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
-   },
+   	},
 	"UPDRS_III_f7": {
-      "Description": "Lower limb bradykinesia ",
+	      	"Description": "Lower limb bradykinesia ",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
 	},
 }
