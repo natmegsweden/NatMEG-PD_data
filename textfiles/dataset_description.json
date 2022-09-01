@@ -3,21 +3,18 @@
 	"BIDSVersion":"v1.6.0",
 	"DatasetType":"raw",
 	"EthicsApprovals":"The Swedish Ethical Review Authority. DNR 2019-00542",
-  	"License": "XXX",
+  	"License": "CC-BY",
   	"Authors": [
 	 "Mikkel C. Vinding",
 	 "..."
   	],
   	"HowToAcknowledge": "Please cite this paper: XXX",
   	"Funding": [
-    "XXX",
-    "XXX"
-  	],
-  	"EthicsApprovals": [
-    "XXX (Protocol ARL-20098-10051, ARL 12-040, and ARL 12-041)"
+    "Swedish Foundation for Strategic Research; Knut and Alice Wallenberg foundation (SBE 13-0115)",
+    "Knut and Alice Wallenberg foundation (#KAW2011.0207)"
   	],
   "ReferencesAndLinks": [
-
+		"..."
   ],
   "DatasetDOI": "XXX",
 }
