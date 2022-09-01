@@ -6,8 +6,8 @@
 	"GeneratedBy": [
 	{
 		"Name": "warpmig",
-      "Description": "Warped template to participants' anatomical MRI described in https://doi.org/10.1016/j.neuroimage.2022.119165",
-      "CodeURL": "https://github.com/natmegsweden/PD_data_share/tree/main/scripts/mri_warp"
+	"Description": "Warped template to participants' anatomical MRI described in https://doi.org/10.1016/j.neuroimage.2022.119165",
+      	"CodeURL": "https://github.com/natmegsweden/PD_data_share/tree/main/scripts/mri_warp"
 	}
 	]
 }
