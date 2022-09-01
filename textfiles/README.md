@@ -103,6 +103,9 @@ and with a link to more comprehensive description (like with MRIQC) if possible.
 
 A brief sentence about the subject pool in this experiment.
 
+
+
+
 Remember that `Control` or `Patient` status should be defined in the `participants.tsv`
 using a group column.
 
@@ -110,7 +113,13 @@ using a group column.
 - [ ] Subject inclusion criteria (if relevant)
 - [ ] Subject exclusion criteria (if relevant)
 
-The study includes 80 PD patients (age 44-85; 32 female) and 71 healthy controls (age 46-78; 46 female). Subjects from the patient group were recruited from the Parkinson's Outpatient Clinic, Department of Neurology, Karolinska University Hospital, Stockholm, Sweden. Recruitment of healthy controls was conducted via advertising or amongst spouses of PD patients. The criteria of inclusion for the PD group were a PD diagnosis according to the United Kingdom Parkinson's Disease Society Brain Bank Diagnostic Criteria with Hoehn and Yahr stage 1-3. Inclusion criteria for the control group were the absence of PD diagnosis, absence of any form of movement disorder, and no history of neurological diseases, psychiatric disorders, or epilepsy. Exclusion criteria for both groups were a diagnosis of major depression, dementia, history or presence of schizophrenia, bipolar disorder, epilepsy, or history of alcoholism or drug addiction according to the Diagnostic and Statistical Manual of Mental Disorders. (Vinding et.al. 2022)
+The study includes 80 PD patients (age 44-85; 32 female) and 71 healthy controls (age 46-78; 46 female). Subjects from the patient group were recruited from the Parkinson's Outpatient Clinic, Department of Neurology, Karolinska University Hospital, Stockholm, Sweden. Recruitment of healthy controls was conducted via advertising or amongst spouses of PD patients. 
+
+The criteria of inclusion for the PD group were a PD diagnosis according to the United Kingdom Parkinson's Disease Society Brain Bank Diagnostic Criteria with Hoehn and Yahr stage 1-3. Inclusion criteria for the control group were the absence of PD diagnosis, absence of any form of movement disorder, and no history of neurological diseases, psychiatric disorders, or epilepsy. 
+
+Exclusion criteria for both groups were a diagnosis of major depression, dementia, history or presence of schizophrenia, bipolar disorder, epilepsy, or history of alcoholism or drug addiction according to the Diagnostic and Statistical Manual of Mental Disorders. (Vinding et.al. 2022)
+
+The PD patients participated in the study while receiving their usual prescribed dose of medication.
 
 ### Apparatus
 
@@ -141,11 +150,14 @@ separated into different files.)
 
 As much detail as possible about the task and the events that were recorded.
 
-Resting-state:
-During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The PD patients participated in the study while receiving their usual prescribed dose of medication (Vinding et.al. 2022).
+**Resting-state:**
+During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed.
 
-Passive: 
-Participants had their index finger on pneumatic artificial muscles (PAM) that induced proprioceptive feedback by brief movement (200 ms) inducing passive movements every 3.5-4.0 seconds. Electromyography (EMG) was recorded on the forearms above the flexor carpi radialis with bipolar Ag/AgC electrodes placed 7–8 cm apart. MEG recordings in the MSR were conducted twice: first in OFF medication condition and then after an hour’s break in ON (Vinding et. al. 2019).
+**go:**
+...
+
+**Passive:**
+Participants had their index finger on pneumatic artificial muscles (PAM) that induced proprioceptive feedback by brief movement (200 ms) inducing passive movements every 3.5-4.0 seconds. Electromyography (EMG) was recorded on the forearms above the flexor carpi radialis with bipolar Ag/AgC electrodes placed 7–8 cm apart.
 
 ### Additional data acquired
 
@@ -178,7 +190,7 @@ Some examples:
 - Differences (even slight) in protocol for certain participants.
 
 #### Clinical data and metadata
-- Participant 093 had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on UPDRS.
+- Participant 093 had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-II.
 
 #### MEG recordings and data
 - Task "Passive" were not acquired for participants 020, 034, 062, 092 117, and 126.

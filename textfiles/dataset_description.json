@@ -1,0 +1,23 @@
+{
+	"Name":"NatMEG_PD_dataset",
+	"BIDSVersion":"v1.6.0",
+	"DatasetType":"raw",
+	"EthicsApprovals":"The Swedish Ethical Review Authority. DNR 2019-00542",
+  	"License": "XXX",
+  	"Authors": [
+	 "Mikkel C. Vinding",
+	 "..."
+  	],
+  	"HowToAcknowledge": "Please cite this paper: XXX",
+  	"Funding": [
+    "XXX",
+    "XXX"
+  	],
+  	"EthicsApprovals": [
+    "XXX (Protocol ARL-20098-10051, ARL 12-040, and ARL 12-041)"
+  	],
+  "ReferencesAndLinks": [
+
+  ],
+  "DatasetDOI": "XXX",
+}
