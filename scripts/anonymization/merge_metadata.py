@@ -46,7 +46,7 @@ hand_data  = pd.read_csv('/home/mikkel/PD_long/subj_data/handedness.csv')
 ledd_data  = pd.read_csv('/home/mikkel/PD_long/subj_data/ptns_medication_anonymised.csv', delimiter=',', usecols=[0, 1, 2], nrows=67)
 
 # HY stage + UPDRS + UPDRS subscales
-updrs_data = pd.read_csv('/home/mikkel/PD_long/subj_data/UPDRS_PD_MEG_2020.csv', delimiter=';')
+updrs_data = pd.read_csv('/home/mikkel/PD_long/subj_data/UPDRS_PD_MEG_2020.csv', delimiter=',')
 updrs_data.rename(columns = {'H_Y_STAGE ':'H_Y_STAGE'}, inplace = True)
 updrs_data['H_Y_STAGE'] = updrs_data['H_Y_STAGE'].replace(to_replace='NR', value=np.NaN)
 updrs_data['H_Y_STAGE'] = updrs_data['H_Y_STAGE'].replace(to_replace='UR', value=np.NaN)
