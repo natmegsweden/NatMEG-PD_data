@@ -1,3 +1,7 @@
 
 0.0.1 2022-09-01
 - Adding missing pieces of metadata and BIDS textfiles
+
+0.0.2 2022-09-11
+- Updated "events.tsv" files and added "events.json" files.
+- Update "README.md" with trigger exceptions.
