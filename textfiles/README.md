@@ -71,7 +71,7 @@ Summary: 134 - Subjects, 1 - Session
 
 Available Tasks: Resting-state, Passive movements, Go task
 
-Available Modalities: Magnetoencephalography (MEG)
+Available Modalities: Magnetoencephalography (MEG), Warped template structural magnetic resonsance imaging (MRI)
 
 - [ ] Independent variables
 
@@ -151,24 +151,24 @@ separated into different files.)
 As much detail as possible about the task and the events that were recorded.
 
 **Resting-state:**
-During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed.
+During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The start and the end of the three-minute resting-state periond is marked with a trigger ("start": STI101 = 1, "stop" STI101 = 64)).
 
 **go:**
-...
+... _description_
 
 **Passive:**
 Participants had their index finger on pneumatic artificial muscles (PAM) that induced proprioceptive feedback by brief movement (200 ms) inducing passive movements every 3.5-4.0 seconds. Electromyography (EMG) was recorded on the forearms above the flexor carpi radialis with bipolar Ag/AgC electrodes placed 7–8 cm apart.
 
 ### Additional data acquired
 
-A brief indication of data other than the
+**A brief indication of data other than the
 imaging data that was acquired as part of this experiment. In addition
 to data from other modalities and behavioral data, this might include
 questionnaires and surveys, swabs, and clinical information. Indicate
 the availability of this data.
 
 This is especially relevant if the data are not included in a `phenotype` folder.
-https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#phenotypic-and-assessment-data
+https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#phenotypic-and-assessment-data**
 
 ### Experimental location
 
@@ -178,41 +178,44 @@ in the relevant json files.
 
 ### Missing data
 
-Mention something if some participants are missing some aspects of the data.
-This can take the form of a processing log and/or abnormalities about the dataset.
-
-Some examples:
-
-- A brain lesion or defect only present in one participant
-- Some experimental conditions missing on a given run for a participant because
-  of some technical issue.
-- Any noticeable feature of the data for certain participants
-- Differences (even slight) in protocol for certain participants.
-
 #### Clinical data and metadata
-- Participant 093 had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-II.
+* Participant 093 had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-III.
 
 #### MEG recordings and data
-- Task "Passive" were not acquired for participants 020, 034, 062, 092 117, and 126.
-- cHPI was not turned on during "Rest" for participant 025. Maxfilter run with tSSS but no compensation for head movement.
 
-##### Resting-state
-- Alternative/missing triggers...
+##### Resting-state MEG
+
+*Recording exceptions:*
+* cHPI was not turned on during "Rest" for participant 025. Maxfilter run with tSSS but no compensation for head movement.
+
+*Trigger exceptions:*
+* Participants 015, 035, 068 are missing "stop" triggers.
+* Participant 105 is missing "start" trigger.
+* Participant 035 is missing "start" and "stop" triggers.
+* Participants 041, 110, and 127 have multiple "start" triggers and missing "stop" triggers. Use the first "start" triggers. See "*-events.tsv" files for more info.
+* Participant 063 has inverted trigger values. See "*-events.tsv" file for more info.
 
 ##### Go task
-- Alternative/missing triggers...
+
+*Trigger exceptions:*
+* Participant 063 has inverted trigger values. See "*-events.tsv" file for more info.
 
 ##### Passive movements
-- Alternative/missing triggers...
+
+*Missing data:*
+* Task "Passive" were not acquired for participants 009, 020, 034, 062, 092 117, and 126.
+
+*Trigger exceptions:*
+* Participant 063 has inverted trigger values. See "*-events.tsv" file for more info.
 
 #### MRI recordings and data
-- MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because cancellation due to COVID-19 lockdown of the MR scanner.
-- MRI is missing for participant 061 due to corrupted source files.
-- Participant 070 did not do MRI.
+* MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because cancellation due to COVID-19 lockdown of the MR scanner.
+* MRI is missing for participant 061 due to corrupted source files.
+* Participant 070 did not do MRI.
 
 ### Notes
 
-Any additional information or pointers to information that
+**Any additional information or pointers to information that
 might be helpful to users of the dataset. Include qualitative information
-related to how the data acquisition went.
+related to how the data acquisition went.**
 

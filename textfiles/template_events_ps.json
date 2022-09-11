@@ -1,0 +1,33 @@
+{
+	"onset": {
+		"Description": "Trigger onset",
+		"units": "seconds"
+	},
+	"duration": {
+		"Description": "Trigger duration",
+	},
+	"sample": {
+		"Description": "Trigger onset",
+		"units": "samples"
+	},
+	"type": {
+ 	   "Description": "Trigger channel",
+      "Levels": {
+			"STI101": "Main trigger channel",
+			"STI001": "Trigger channel pin 1",
+			"STI002": "Trigger channel pin 2",
+			"STI004": "Trigger channel pin 4",
+			"Trigger": "FieldTrip trigger code"
+        }
+    },
+	"value": {
+		"Description": "Trigger value",
+	}
+	"event_type": {
+		"Description": "Trigger event category",
+		"Levels": {
+			"cue": "Visual cue",
+			"movement": "Induced passive movement"
+      }
+	}
+}
