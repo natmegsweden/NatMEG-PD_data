@@ -45,11 +45,11 @@
    	},
 	"BDI": {
      		"Description": "Becks Depression Inventory II",
-		"TermURL": "https://psycnet.apa.org/doi/10.1037/t00742-000",
+		"TermURL": "https://psycnet.apa.org/doi/10.1037/t00742-000"
 	},
    	"MoCA": {
 		"Description": "Montreal Cognitive Assessment",
-		"TermURL": "www.mocatest.org",
+		"TermURL": "www.mocatest.org"
    	},
 	"FAB": {
 		"Description": "Frontal Assessment Battery",
@@ -96,5 +96,5 @@
 	"UPDRS_III_f7": {
 	      	"Description": "Lower limb bradykinesia ",
 		"TermURL": "https://doi.org/10.1002/mds.22340"
-	},
+	}
 }
