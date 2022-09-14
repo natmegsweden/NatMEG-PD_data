@@ -4,26 +4,26 @@
 		"units": "seconds"
 	},
 	"duration": {
-		"Description": "Trigger duration",
+		"Description": "Trigger duration"
 	},
 	"sample": {
 		"Description": "Trigger onset",
 		"units": "samples"
 	},
 	"type": {
- 	   "Description": "Trigger channel",
-      "Levels": {
+		"Description": "Trigger channel",
+		"Levels": {
 			"STI101": "Main trigger channel",
 			"STI001": "Trigger channel pin 1",
 			"STI002": "Trigger channel pin 2",
 			"STI003": "Trigger channel pin 3",
 			"STI004": "Trigger channel pin 4",
-			"STI102": "Response keypad trigger channel",			
+			"STI102": "Response keypad trigger channel",
 			"Trigger": "FieldTrip trigger code"
-        }
-    },
+		}
+	},
 	"value": {
-		"Description": "Trigger value",
+		"Description": "Trigger value"
 	},
 	"event_type": {
 		"Description": "Trigger event category",
@@ -31,6 +31,6 @@
 			"go_cue": "Visual go cue",
 			"response": "Response",
 			"key_press": "Registered response on keypad"
-      }
-   }
+		}
+	}
 }
