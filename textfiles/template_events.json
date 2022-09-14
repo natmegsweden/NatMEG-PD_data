@@ -12,8 +12,8 @@
 		"units": "samples"
 	},
 	"type": {
- 	   "Description": "Trigger channel",
-      "Levels": {
+		"Description": "Trigger channel",
+		"Levels": {
 			"STI101": "Main trigger channel",
 			"STI001": "Trigger channel pin 1",
 			"STI002": "Trigger channel pin 2",
@@ -22,17 +22,18 @@
 			"STI005": "Trigger channel pin 5",
 			"STI006": "Trigger channel pin 6",
 			"STI007": "Trigger channel pin 7",
-			"STI008": "Trigger channel pin 8",						
+			"STI008": "Trigger channel pin 8",
 			"Trigger": "FieldTrip trigger code"
-        }
-    },
+		}
+	},
 	"value": {
-		"Description": "Trigger value",
-	}
+		"Description": "Trigger value"
+	},
 	"event_type": {
 		"Description": "Trigger event category",
 		"Levels": {
 			"start": "Start of resting state period",
 			"stop": "End of resting state period"
-        }
+		}
+	}
 }
