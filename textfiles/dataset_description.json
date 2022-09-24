@@ -2,11 +2,19 @@
 	"Name":"NatMEG_PD_dataset",
 	"BIDSVersion":"v1.6.0",
 	"DatasetType":"raw",
-	"EthicsApprovals":"The Swedish Ethical Review Authority. DNR 2019-00542",
-  	"License": "CC-BY",
+	"EthicsApprovals": [
+		"The Swedish Ethical Review Authority. DNR 2019-00542"
+	],
+  	"License": "XXX",
   	"Authors": [
 	 "Mikkel C. Vinding",
-	 "..."
+	 "Allison Eriksson",
+	 "Igori Comarovschii",
+	 "Cassia Man Ting Low",
+	 "Josefine Waldthaler",
+	 "Robert Oostenveld",
+	 "Per Svenningsson",
+	 "Daniel Lundqvist"
   	],
   	"HowToAcknowledge": "Please cite this paper: XXX",
   	"Funding": [

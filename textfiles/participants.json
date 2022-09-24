@@ -49,7 +49,7 @@
 	},
    	"MoCA": {
 		"Description": "Montreal Cognitive Assessment",
-		"TermURL": "www.mocatest.org"
+		"TermURL": "https://www.mocatest.org/"
    	},
 	"FAB": {
 		"Description": "Frontal Assessment Battery",
@@ -67,7 +67,7 @@
    	},
 	"UPDRS_III": {
 		"Description": "Total score on Movement Disorder Society-sponsored revision of the Unified Parkinson’s Disease Rating Scale, part III (MDS-UPDRS-III; patients only)",
-		"TermURL":  "DOI: 10.1002/mds.22340"
+		"TermURL":  "https://doi.org/10.1002/mds.22340"
 	},
 	"UPDRS_III_f1": {
 		"Description": "Midline function, MDS-UPDRS-III (patients only)",

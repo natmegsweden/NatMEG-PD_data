@@ -1,0 +1,9 @@
+
+
+# Locas folders
+BIDS_data/
+misc/
+mri_warp/
+sourcefiles/
+textfiles/archive
+scripts/bidsify/temp

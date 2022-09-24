@@ -1,7 +1,12 @@
+Revision history for NatMEG-PD dataset
 
-0.0.1 2022-09-01
-- Adding missing pieces of metadata and BIDS textfiles
+0.0.3 2022-09-24
+- Fixed errors in sidecarfiles
+- Update "README.md"
 
 0.0.2 2022-09-11
 - Updated "events.tsv" files and added "events.json" files.
 - Update "README.md" with trigger exceptions.
+
+0.0.1 2022-09-01
+- Adding missing pieces of metadata and BIDS textfiles

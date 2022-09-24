@@ -23,9 +23,7 @@ More info here: https://neurostars.org/t/where-in-a-bids-dataset-should-i-put-no
 If the dataset requires a data user agreement, link to the relevant information.
 Copy/paste when decided
 
-- [x] Contact persons
-
-Indicate the name and contact details (email and ORCID) of the person responsible for additional information.
+**Contact persons:**
 
 * Mikkel C. Vinding, email: mikkel.vinding@ki.se, ORCID:  https://orcid.org/0000-0002-7954-2886
 * Daniel Lundqvist, email: daniel.lundqvist@ki.se
@@ -101,39 +99,23 @@ and with a link to more comprehensive description (like with MRIQC) if possible.
 
 ### Subjects
 
-A brief sentence about the subject pool in this experiment.
-
-
-
-
-Remember that `Control` or `Patient` status should be defined in the `participants.tsv`
-using a group column.
-
-- [ ] Information about the recruitment procedure
-- [ ] Subject inclusion criteria (if relevant)
-- [ ] Subject exclusion criteria (if relevant)
-
 The study includes 80 PD patients (age 44-85; 32 female) and 71 healthy controls (age 46-78; 46 female). Subjects from the patient group were recruited from the Parkinson's Outpatient Clinic, Department of Neurology, Karolinska University Hospital, Stockholm, Sweden. Recruitment of healthy controls was conducted via advertising or amongst spouses of PD patients. 
 
 The criteria of inclusion for the PD group were a PD diagnosis according to the United Kingdom Parkinson's Disease Society Brain Bank Diagnostic Criteria with Hoehn and Yahr stage 1-3. Inclusion criteria for the control group were the absence of PD diagnosis, absence of any form of movement disorder, and no history of neurological diseases, psychiatric disorders, or epilepsy. 
 
-Exclusion criteria for both groups were a diagnosis of major depression, dementia, history or presence of schizophrenia, bipolar disorder, epilepsy, or history of alcoholism or drug addiction according to the Diagnostic and Statistical Manual of Mental Disorders. (Vinding et.al. 2022)
+Exclusion criteria for both groups were a diagnosis of major depression, dementia, history or presence of schizophrenia, bipolar disorder, epilepsy, or history of alcoholism or drug addiction according to the Diagnostic and Statistical Manual of Mental Disorders.
 
-The PD patients participated in the study while receiving their usual prescribed dose of medication.
+The PD patients participated in the study while on their usual prescribed dose of medication.
 
 ### Apparatus
 
-A summary of the equipment and environment setup for the
-experiment. For example, was the experiment performed in a shielded room
-with the subject seated in a fixed position.
-
-MEG recordings were done in a two-layer magnetically shielded room (MSR) (Vacuumschmelze GmbH) using Neuromag TRIUX 306-channel whole-head system with 102 magnetometers and 102 pairs of planar gradiometers. The recordings were sampled at 1000 Hz with an online 0.1 Hz high-pass filter and 330 Hz low-pass filter (Vinding et.al. 2022).
+MEG recordings were done in a two-layer magnetically shielded room (MSR) (Vacuumschmelze GmbH) using Neuromag TRIUX 306-channel whole-head system with 102 magnetometers and 102 pairs of planar gradiometers. The recordings were sampled at 1000 Hz with an online 0.1 Hz high-pass filter and 330 Hz low-pass filter. All MEG recordings were done in the upright position.
 
 ### Initial setup
 
-A summary of what setup was performed when a subject arrived.
+A summary of what setup was performed when a subject arrived: Head-position indicator coils (HPI) were attached to subjects' heads to measure head position and head movement inside the MEG scanner. The Polhemus Fastrak motion tracker was used for the digitalization of HPI and uniformly sampled additional points of subjects' head shapes.
 
-Head-position indicator coils (HPI) were attached to subjects' heads to measure head position and head movement inside the MEG scanner. The Polhemus Fastrak motion tracker was used for the digitalization of HPI and uniformly sampled additional points of subjects' head shapes. MEG was recorded simultaneously with vertical and horizontal electrooculogram (EOG) and electrocardiogram (ECG) (Vinding et.al. 2022). 
+MEG was recorded simultaneously with vertical and horizontal electrooculogram (EOG) and electrocardiogram (ECG). An accelerometer was attached to the subjects' right index finger.
 
 ### Task organization
 
@@ -159,22 +141,11 @@ During the three minutes of resting-state, MEG recording participants sat with c
 **Passive:**
 Participants had their index finger on pneumatic artificial muscles (PAM) that induced proprioceptive feedback by brief movement (200 ms) inducing passive movements every 3.5-4.0 seconds. Electromyography (EMG) was recorded on the forearms above the flexor carpi radialis with bipolar Ag/AgC electrodes placed 7–8 cm apart.
 
-### Additional data acquired
-
-**A brief indication of data other than the
-imaging data that was acquired as part of this experiment. In addition
-to data from other modalities and behavioral data, this might include
-questionnaires and surveys, swabs, and clinical information. Indicate
-the availability of this data.
-
-This is especially relevant if the data are not included in a `phenotype` folder.
-https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#phenotypic-and-assessment-data**
-
 ### Experimental location
 
-This should include any additional information regarding the
-the geographical location and facility that cannot be included
-in the relevant json files.
+MEG data was collected the National Facility for Magnetoencephalography (NatMEG) at Karolinska Institutet, Nobels väg 9, 171 77, Stockholm Sweden.
+
+MRI data was collected at MR-Centrum, Karolinska Institutet, Stockholm Sweden.
 
 ### Missing data
 
@@ -189,9 +160,10 @@ in the relevant json files.
 * cHPI was not turned on during "Rest" for participant 025. Maxfilter run with tSSS but no compensation for head movement.
 
 *Trigger exceptions:*
-* Participants 015, 035, 068 are missing "stop" triggers.
+* Participant 036 is missing "stop" triggers.
 * Participant 105 is missing "start" trigger.
 * Participant 035 is missing "start" and "stop" triggers.
+* Participants 015 and 068 are missing "start" trigger - stop trigger instead has start trigger value. See "*-events.tsv" files for more info.
 * Participants 041, 110, and 127 have multiple "start" triggers and missing "stop" triggers. Use the first "start" triggers. See "*-events.tsv" files for more info.
 * Participant 063 has inverted trigger values. See "*-events.tsv" file for more info.
 
@@ -209,7 +181,7 @@ in the relevant json files.
 * Participant 063 has inverted trigger values. See "*-events.tsv" file for more info.
 
 #### MRI recordings and data
-* MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because cancellation due to COVID-19 lockdown of the MR scanner.
+* MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because cancellation due to COVID-19 lockdown at the MR scanner facility.
 * MRI is missing for participant 061 due to corrupted source files.
 * Participant 070 did not do MRI.
 
