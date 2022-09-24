@@ -57,11 +57,11 @@ general.dataset_description.EthicsApprovals = 'The Swedish Ethical Review Author
 % MEG recording info common to all recordings
 general.meg.DewarPosition              = 'upright';    % REQUIRED. Position of the dewar during the MEG scan: "upright", "supine" or "degrees" of angle from vertical: for example on CTF systems, upright=15??, supine = 90??.
 general.meg.SoftwareFilters            = 'n/a';        % REQUIRED. List of temporal and/or spatial software filters applied, orideally key:valuepairsofpre-appliedsoftwarefiltersandtheir parameter values: e.g., {"SSS": {"frame": "head", "badlimit": 7}}, {"SpatialCompensation": {"GradientOrder": Order of the gradient compensation}}. Write "n/a" if no software filters applied.
-general.meg.DigitizedLandmarks         = 'true';       % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
-general.meg.DigitizedHeadPoints        = 'true';       % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
+general.meg.DigitizedLandmarks         = true;         % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
+general.meg.DigitizedHeadPoints        = true;         % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
 general.meg.RecordingType              = 'continuous';
-general.meg.ContinuousHeadLocalization = 'true';
-general.meg.PowerLineFrequency         = 50;         % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
+general.meg.ContinuousHeadLocalization = true;
+general.meg.PowerLineFrequency         = 50;           % REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)
 
 %% Run loop
 for subindx = 1:numel(subjects_and_dates)
@@ -99,8 +99,8 @@ for subindx = 1:numel(subjects_and_dates)
 
     % Recording info
     cfg_sub.meg.AssociatedEmptyRoom = ['./sub-',linkdata.anonym_id{subindx},'_task-noise_proc-tsss_meg.fif'];
-    cfg_sub.meg.DigitizedLandmarks  = 'true';    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
-    cfg_sub.meg.DigitizedHeadPoints = 'true';    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
+    cfg_sub.meg.DigitizedLandmarks  = true;    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
+    cfg_sub.meg.DigitizedHeadPoints = true;    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
 
     % ####################################################################
     % 1) BIDSify REST data
@@ -113,10 +113,10 @@ for subindx = 1:numel(subjects_and_dates)
     % Exceptions
     if contains(cfg.dataset, '_mc')
         cfg.proc     = 'tsss+mc';
-        cfg.meg.ContinuousHeadLocalization = 'true';
+        cfg.meg.ContinuousHeadLocalization = true;
     else
         cfg.proc     = 'tsss';
-        cfg.meg.ContinuousHeadLocalization = 'false';
+        cfg.meg.ContinuousHeadLocalization = false;
     end
 
     try
@@ -138,10 +138,10 @@ for subindx = 1:numel(subjects_and_dates)
     % Exceptions
     if contains(cfg.dataset, '_mc')
         cfg.proc     = 'tsss+mc';
-        cfg.meg.ContinuousHeadLocalization = 'true';
+        cfg.meg.ContinuousHeadLocalization = true;
     else
         cfg.proc     = 'tsss';
-        cfg.meg.ContinuousHeadLocalization = 'false';
+        cfg.meg.ContinuousHeadLocalization = false;
     end
     
     try
@@ -161,10 +161,10 @@ for subindx = 1:numel(subjects_and_dates)
     % Exceptions
     if contains(cfg.dataset, '_mc')
         cfg.proc     = 'tsss+mc';
-        cfg.meg.ContinuousHeadLocalization = 'true';
+        cfg.meg.ContinuousHeadLocalization = true;
     else
         cfg.proc     = 'tsss';
-        cfg.meg.ContinuousHeadLocalization = 'false';
+        cfg.meg.ContinuousHeadLocalization = false;
     end
     
     try
@@ -180,9 +180,9 @@ for subindx = 1:numel(subjects_and_dates)
     cfg.task     = 'noise';
     cfg.TaskName = 'noise';
     cfg.proc     = 'tsss';
-    cfg.meg.DigitizedLandmarks         = 'false';    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
-    cfg.meg.DigitizedHeadPoints        = 'false';    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
-    cfg.meg.ContinuousHeadLocalization = 'false';
+    cfg.meg.DigitizedLandmarks         = false;    % REQUIRED. Boolean ("true" or "false") value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording.
+    cfg.meg.DigitizedHeadPoints        = false;    % REQUIRED. Boolean ("true" or "false") value indicating whether head points outlining the scalp/face surface are contained within this recording.
+    cfg.meg.ContinuousHeadLocalization = false;
     cfg.meg.AssociatedEmptyRoom = [];
     
     try
