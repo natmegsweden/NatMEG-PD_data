@@ -1,24 +1,28 @@
-# README
+﻿# README
 
-This is the README for the National Facility for Magnetoencephalography Parkinson's Disease (NatMEG-PD) dataset. Below you will find important infomration about usage, permissions, and contend in the dataset.
+This is the README for the National Facility for Magnetoencephalography Parkinson's Disease dataset (NatMEG-PD). Below you will find important information about usage, permissions, and content in the dataset.
 
-Plese read this document carefully before you use data from the NatMEG-PD dataset.
+Please read this document carefully before you use data from the NatMEG-PD dataset.
+
+For more information about NatMEG-PD, please read the following paper [1]:
+
+REF
 
 ## Details related to access to the data
 
 ### Data user agreement
 
-The NatMEG-PD dataset is available thought EBRAINS (www.ebrains.eu) under the terms of EBRAINS Data Usage Agreement for human data (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf) and EBRAINS General terms of use (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_General_Terms_of_use_e457353c1a_d2122f84c2.pdf) and Data Use Agreement (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf).
+The NatMEG-PD dataset is available through EBRAINS (www.ebrains.eu) under the terms of EBRAINS Data Usage Agreement for human data (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf) and EBRAINS General terms of use (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_General_Terms_of_use_e457353c1a_d2122f84c2.pdf) and Data Use Agreement (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf).
 
 In order to use potentially identifiable human Data provided by EBRAINS services, you agree to the following terms:
 * You are data controller for any Pseudonymised Data provided by EBRAINS services and will comply with the provisions of the GDPR.
-*  You will preserve, at all times, the privacy of these Data. In particular, you agree not to attempt to compromise or otherwise infringe the privacy of information on Research Participants.
+* You will preserve, at all times, the privacy of these Data. In particular, you agree not to attempt to compromise or otherwise infringe the privacy of information on Research Participants.
 * You will not attempt to re-identify the Research Participants.
 * You will protect the privacy of Research Participants in any research papers or publications that they prepare by taking all reasonable care to limit the possibility of identification.
 * You will not attempt to transfer these Data, in whole or part, to anyone beyond your institution.
 * You will liaise with the Data Provider with regard to any incidental findings.
 * You will destroy/discard the Data held, once it is no longer used for the Project, unless obliged to retain the data for archival purposes in conformity with audit or legal requirements.
-* You will distribute a copy of this agreement to Data Processors of the Data. It is the your responsibility to ensure that Data Processors comply with the terms of this agreement.
+* You will distribute a copy of this agreement to Data Processors of the Data. It is your responsibility to ensure that Data Processors comply with the terms of this agreement.
 * You will report any unauthorised access to Data to the EBRAINS Data Protection Officer (data.protection@ebrains.eu) as soon as possible or within 72 hours in compliance with the GDPR.
 * Failure to comply to this agreement will result in the termination of access to these Data.
 
@@ -41,15 +45,19 @@ Data collected April 2019 - March 2020
 
 The experiment consists of MEG recording during three tasks - resting state, passive movements, and go.
 
-**Resting-state.** Three minutes of resting-state MEG while the participants sat with their eyes closed. The participants were instructed to close their eyes, sit still, and relax for three minutes. The recordings began after assuring the participant sat still with their eyes closed. The start and stop of the resting-state period is marked in the trigger channel in the MEG data file. The resting-state data was obtained for analysis of beta burst. 
+**Resting-state.** Three minutes of resting-state MEG while the participants sat with their eyes closed. The participants were instructed to close their eyes, sit still, and relax for three minutes. The recordings began after assuring the participant sat still with their eyes closed.
 
-The goal of the resting-state MEG recordings was to examine how features of cortical somatosensory oscillatory activity differ between PD patients and healthy controls across age and gender and the relation of these features to PD motor symptoms. Resting-state recordings were performed for three minutes while participants sat relaxed with their eyes closed (Vinding et al. 2022).
+The goal of the resting-state MEG recordings was to examine how features of cortical somatosensory oscillatory activity differ between PD patients and healthy controls across age and gender and the relation of these features to PD motor symptoms. Resting-state recordings were performed for three minutes while participants sat relaxed with their eyes closed. For more information, see [2].
 
-**Go task.** 
-The aim of the go task was to examine the beta ERS and ERD in PD patients and healthy. The results are described by (Vinding, et al. in prep.).
+**Go task.**
+Participants responded to a visual cue by pressing a button with their right index finger.
 
-**Passive movement.** 
-The aim of the passive movement were to examine the beta ERS and ERD in PD patients and healthy controls (similar to Vinding et.al. 2019). The results are described by (Vinding, et al. in prep.).
+The aim of the go task was to examine the beta ERS and ERD in PD patients and healthy. The background, methods, and results are described by [3].
+
+**Passive movement.**
+Passive movements were induced to the right index finger.
+
+The aim of the passive movements was to examine the beta ERS and ERD in PD patients and healthy controls (similar to [4]]). The background, methods, and results are described in [3].
 
 ###Description of the contents of the dataset
 
@@ -62,7 +70,7 @@ Available Tasks:
 
 Available Modalities: 
 * Magnetoencephalography (MEG)
-* Individualized warped template structural magnetic resonsance imaging (MRI)
+* Individualised warped template structural magnetic resonance imaging (MRI)
 
 ## Methods
 
@@ -74,65 +82,67 @@ Subjects from the patient group were recruited from the Parkinson's Outpatient C
 
 The criteria of inclusion for the PD group were a PD diagnosis according to the United Kingdom Parkinson's Disease Society Brain Bank Diagnostic Criteria with Hoehn and Yahr stage 1-3. Inclusion criteria for the control group were the absence of PD diagnosis, absence of any form of movement disorder, and no history of neurological diseases, psychiatric disorders, or epilepsy. 
 
-Exclusion criteria for both groups were a diagnosis of major depression, dementia, history or presence of schizophrenia, bipolar disorder, epilepsy, or history of alcoholism or drug addiction according to the Diagnostic and Statistical Manual of Mental Disorders.
+Exclusion criteria for both groups were a diagnosis of major depression, dementia, history or presence of schizophrenia, bipolar disorder, epilepsy, or history of alcoholism or drug addiction, according to the Diagnostic and Statistical Manual of Mental Disorders.
 
-The PD patients participated in the study while on their usual prescribed dose of medication.
+The PD patients participated in the study on their usual prescribed dose of medication.
 
 ### Apparatus
 
 MEG recordings were done in a two-layer magnetically shielded room (MSR) (Vacuumschmelze GmbH) using Neuromag TRIUX 306-channel whole-head system with 102 magnetometers and 102 pairs of planar gradiometers. The recordings were sampled at 1000 Hz with an online 0.1 Hz high-pass filter and 330 Hz low-pass filter. All MEG recordings were done in the upright position.
 
+Original MRI data consist of 3D T1-weighted magnetisation-prepared rapid gradient-echo (MPRAGE) sequence structural images (voxel size: 1x1x1 mm) obtained on a GE Discovery 3.0 T MR scanner. 
+
 ### Initial setup
 
-A summary of what setup was performed when a subject arrived: Head-position indicator coils (HPI) were attached to subjects' heads to measure head position and head movement inside the MEG scanner. The Polhemus Fastrak motion tracker was used for the digitalization of HPI and uniformly sampled additional points of subjects' head shapes.
+A summary of what setup was performed when a subject arrived: Head-position indicator coils (HPI) was attached to subjects' heads to measure head position and head movement inside the MEG scanner. A Polhemus Fastrak motion tracker was used to digitalise HPI and uniformly sampled additional points of subjects' head shapes.
 
-MEG was recorded simultaneously with vertical and horizontal electrooculogram (EOG) and electrocardiogram (ECG). An accelerometer was attached to the subjects' right index finger to measure movement kinematic.
+MEG was recorded simultaneously with vertical and horizontal electrooculogram (EOG) and electrocardiogram (ECG). An accelerometer was attached to the subject's right index finger to measure movement kinematics.
 
-### Task organization
+### Task organisation
 
-The order of the task was fixed:
+The order of the MEG tasks was fixed:
 1) Resting-state MEG.
 2) Go task MEG
-3) Passive moevemnt MEG
+3) Passive movement MEG
 
-Clinical test outside the MEG scanner immediatly after the MEG session.
+Clinical test outside the MEG scanner immediately after the MEG session.
 
-MRI was obtained on a seperate day.
+MRI was obtained on a separate day.
 
 ### Task details
 
 **Resting-state:**
-During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The start and the end of the three-minute resting-state periond is marked with a trigger ("start": STI101 = 1, "stop" STI101 = 64)).
+During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The start and the end of the three-minute resting-state period is marked with a trigger ("start": STI101 = 1, "stop" STI101 = 64)).
 
 **go task:** 
-The participants were instructed to respond to a visual cue presented on the screen by pressing a button with their right index finger. The visual cue consisted of a fixed white dot at the middle of the screen. At a random time between 2.5-4.5 s after trial onset, the dot would change colour to red. The instructions were to respond as soon as they saw the dot change colour. After the participant then pressed the button, there would then be a delay of between 2.0-2.5 s before a new trial began. The task was repeated for 150 trials split into six blocks of 25 trials with a short intermediate break to counter fatigue. The participants were given a few training trials to familiarize with the task before the recording began. The recording began once the experimenter had ensured that the participants understood and performed the task correct. The onset of the visual cue and onset of the button press are marked in the trigger channels in the MEG data.
+The participants were instructed to respond to a visual cue presented on the screen by pressing a button with their right index finger. The visual cue consisted of a fixed white dot at the middle of the screen. At a random time between 2.5-4.5 s after trial onset, the dot would change colour to red. The instructions were to respond as soon as they saw the dot change colour. After the participant pressed the button, there would be a delay of between 2.0-2.5 s before a new trial began. The task was repeated for 150 trials, split into six blocks of 25 trials with a short intermediate break to counter fatigue. The participants were given a few training trials to familiarise themselves with the task before the recording began. The recording began once the experimenter had ensured that the participants understood and performed the task correct. The onset of the visual cue and the onset of the button press is marked in the trigger channels in the MEG data.
 
 **Passive movements:**
-Proprioceptive stimulation was induced though passive movements of the right index finger by a custom-made MEG compatible pneumatic movement actuator. The visual stimulus was matched to the go task, with the exception that the participants were explicitly instructed to relax, not to move at all, and just focus their gaze at the visual stimuli. The dot changed colour after a random time interval of 2.5-3.5 s upon which the passive movement would be induced after an addition interval of 0.2-0.5 s. The movement actuator would move the finger for 0.15 s giving a movement duration of about 0.3 s. The onset of the visual cue and movement actuator are marked in the trigger channels in the MEG data. The movement kinematics can be evaluated using the accelerometer data. There would then be a delay of between 2.0-2.5 s after the activation of the movement actuator before a new trial began. The procedure was repeated for 150 trials. The procedure would begin after the experimenter had ensured that the participant had their finger places correctly on the movement actuator and that the participants perceived the passive movement. 
+Proprioceptive stimulation was induced through passive movements of the right index finger by a custom-made MEG-compatible pneumatic movement actuator. The visual stimulus was matched to the go task, except the participants were explicitly instructed to relax, not to move, and focus their gaze at the visual stimuli. The dot changed colour after a random time interval of 2.5-3.5 s, upon which the passive movement would be induced after an additional interval of 0.2-0.5 s. The movement actuator would move the finger for 0.15 s giving a movement duration of about 0.3 s. The onset of the visual cue and movement actuator are marked in the trigger channels in the MEG data. The movement kinematics can be evaluated using the accelerometer data. There would then be a delay of between 2.0-2.5 s after the activation of the movement actuator before a new trial began. The procedure was repeated for 150 trials. The procedure would begin after the experimenter had ensured that the participant had the index finger placed correctly on the movement actuator and that the participant perceived the passive movement. 
 
 ### Experimental location
 
-MEG data was collected the National Facility for Magnetoencephalography (NatMEG) at Karolinska Institutet, Nobels väg 9, 171 77, Stockholm Sweden.
+MEG data were collected at the National Facility for Magnetoencephalography (NatMEG) at Karolinska Institutet, Nobels väg 9, 171 77, Stockholm, Sweden.
 
-MRI data was collected at MR-Centrum, Karolinska Institutet, Stockholm Sweden.
+MRI data were collected at MR-Centrum, Karolinska Institutet, Stockholm, Sweden.
 
 ### Missing data
 
 #### Clinical data and metadata
-* Participant 093 had a LT foot injury and was unable to put weight on foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-III.
+* Participant 093 had an LT foot injury and was unable to put weight on the foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-III.
 
 #### MEG recordings and data
 
 ##### Resting-state MEG
 
 *Recording exceptions:*
-* cHPI was not turned on during "Rest" for participant 025. Maxfilter run with tSSS but no compensation for head movement.
+* cHPI was not turned on during "Rest" for participant 025. MaxFilter ran with tSSS but no compensation for head movement.
 
 *Trigger exceptions:*
 * Participant 036 is missing "stop" triggers.
 * Participant 105 is missing "start" trigger.
 * Participant 035 is missing "start" and "stop" triggers.
-* Participants 015 and 068 are missing "start" trigger - stop trigger instead has start trigger value. See "*_events.tsv" files for more info.
+* Participants 015 and 068 are missing "start" trigger - stop trigger instead has the "start" trigger value. See "*_events.tsv" files for more info.
 * Participants 041, 110, and 127 have multiple "start" triggers and missing "stop" triggers. Use the first "start" triggers. See "*-events.tsv" files for more info.
 * Participant 063 has inverted trigger values. See "*_events.tsv" file for more info.
 
@@ -150,7 +160,17 @@ MRI data was collected at MR-Centrum, Karolinska Institutet, Stockholm Sweden.
 * Participant 063 has inverted trigger values. See "*_events.tsv" file for more info.
 
 #### MRI recordings and data
-* MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because cancellation due to COVID-19 lockdown at the MR scanner facility.
+The original MRI obtained for each participant is not part of NatMEG-PD due to privacy concerns regarding the research participants. Here we provide individual warped templates that anonymise the images by altering the brain compartment's specific structural anatomy but preserve the head's gross geometry. The images are suitable for MEG source reconstruction. For information about the procedure to generate the individual warped templates and potential usage in re-analysis of the MEG data, please see [5]
+
+*Missing data:*
+* MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because of cancellation due to COVID-19 lockdown at the MR scanner facility.
 * MRI is missing for participant 061 due to corrupted source files.
 * Participant 070 did not do MRI.
+
+## References
+[1] Vinding, M. C. et al. The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset. (*in prep.*)
+[2] Vinding, M. C. et al. Changes in non-oscillatory features of the cortical sensorimotor rhythm in Parkinson's disease across age. *medrxiv.org* (2021) doi:10.1101/2021.06.27.21259592.
+[3] Vinding, M. C. et al. (*in prep*).
+[4] Vinding, M. C. et al. Attenuated beta rebound to proprioceptive afferent feedback in Parkinson's disease. *Scientific Reports 9*, (2019).
+[5] Vinding, M. C. & Oostenveld, R. Sharing individualised template MRI data for MEG source reconstruction: a solution for open data while keeping subject confidentiality. *NeuroImage 119165* (2022) doi:10.1016/j.neuroimage.2022.119165.
 

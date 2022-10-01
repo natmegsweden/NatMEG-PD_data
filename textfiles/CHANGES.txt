@@ -1,5 +1,8 @@
 Revision history for NatMEG-PD dataset
 
+0.1.0 2022-10-01
+- Update "README.md"
+
 0.0.3 2022-09-24
 - Fixed errors in sidecarfiles
 - Update "README.md"
