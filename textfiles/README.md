@@ -76,7 +76,7 @@ Available Modalities:
 
 ### Subjects
 
-The NatMEG-PD dataset includes 66 PD patients (age 44-77; 28 female) and 68 healthy controls (age 46-78; 30 female). 
+The NatMEG-PD dataset includes data from 66 PD patients (age 44-77; 28 female) and 68 healthy controls (age 46-78; 30 female). 
 
 Subjects from the patient group were recruited from the Parkinson's Outpatient Clinic, Department of Neurology, Karolinska University Hospital, Stockholm, Sweden. Recruitment of healthy controls was conducted via advertising or amongst spouses of PD patients. 
 
