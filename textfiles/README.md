@@ -59,7 +59,7 @@ Passive movements were induced to the right index finger.
 
 The aim of the passive movements was to examine the beta ERS and ERD in PD patients and healthy controls (similar to [4]]). The background, methods, and results are described in [3].
 
-###Description of the contents of the dataset
+### Description of the contents of the dataset
 
 Summary: 134 - Subjects, 1 - Session
 
