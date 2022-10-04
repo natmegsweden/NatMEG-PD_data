@@ -12,7 +12,7 @@ REF
 
 ### Data user agreement
 
-The NatMEG-PD dataset is available through EBRAINS (www.ebrains.eu) under the terms of EBRAINS Data Usage Agreement for human data (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf) and EBRAINS General terms of use (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_General_Terms_of_use_e457353c1a_d2122f84c2.pdf) and Data Use Agreement (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf).
+The NatMEG-PD dataset is available through EBRAINS (www.ebrains.eu) under the terms of EBRAINS Data Usage Agreement for human data (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf) and EBRAINS General terms of use (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_General_Terms_of_use_e457353c1a_d2122f84c2.pdf).
 
 In order to use potentially identifiable human Data provided by EBRAINS services, you agree to the following terms:
 * You are data controller for any Pseudonymised Data provided by EBRAINS services and will comply with the provisions of the GDPR.
