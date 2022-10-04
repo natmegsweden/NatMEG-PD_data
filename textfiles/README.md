@@ -162,7 +162,7 @@ MRI data were collected at MR-Centrum, Karolinska Institutet, Stockholm, Sweden.
 
 #### MRI recordings and data
 
-The original MRI obtained for each participant is not part of NatMEG-PD due to privacy concerns regarding the research participants. Here we provide individual warped templates that anonymise the images by altering the brain compartment's specific structural anatomy but preserve the head's gross geometry. The images are suitable for MEG source reconstruction. For information about the procedure to generate the individual warped templates and potential usage in re-analysis of the MEG data, please see [5]
+The original MRI obtained for each participant is not part of NatMEG-PD to protect the privacy of the research participants. Here we provide individual warped templates that anonymise the images by altering the brain compartment's specific structural anatomy but preserve the head's gross geometry. The images are suitable for MEG source reconstruction. For information about the procedure to generate the individual warped templates and potential usage in re-analysis of the MEG data, please see [5].
 
 *Missing data:*
 * MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because of cancellation due to COVID-19 lockdown at the MR scanner facility.
