@@ -174,6 +174,6 @@ The original MRI obtained for each participant is not part of NatMEG-PD to prote
 [1] Vinding, M. C. et al. The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset. (*in prep.*)
 [2] Vinding, M. C. et al. Changes in non-oscillatory features of the cortical sensorimotor rhythm in Parkinson's disease across age. *medrxiv.org* (2021) doi:10.1101/2021.06.27.21259592.
 [3] Vinding, M. C. et al. (*in prep*).
-[4] Vinding, M. C. et al. Attenuated beta rebound to proprioceptive afferent feedback in Parkinson's disease. *Scientific Reports 9*, (2019). https://doi.org/10.1038/s41598-019-39204-3.
+[4] Vinding, M. C. et al. Attenuated beta rebound to proprioceptive afferent feedback in Parkinson's disease. *Scientific Reports 9*, (2019) https://doi.org/10.1038/s41598-019-39204-3.
 [5] Vinding, M. C. & Oostenveld, R. Sharing individualised template MRI data for MEG source reconstruction: a solution for open data while keeping subject confidentiality. *NeuroImage 119165* (2022) doi:10.1016/j.neuroimage.2022.119165.
 
