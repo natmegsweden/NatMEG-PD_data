@@ -129,6 +129,7 @@ MRI data were collected at MR-Centrum, Karolinska Institutet, Stockholm, Sweden.
 ### Missing data
 
 #### Clinical data and metadata
+
 * Participant 093 had an LT foot injury and was unable to put weight on the foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-III.
 
 #### MEG recordings and data
@@ -160,6 +161,7 @@ MRI data were collected at MR-Centrum, Karolinska Institutet, Stockholm, Sweden.
 * Participant 063 has inverted trigger values. See "*_events.tsv" file for more info.
 
 #### MRI recordings and data
+
 The original MRI obtained for each participant is not part of NatMEG-PD due to privacy concerns regarding the research participants. Here we provide individual warped templates that anonymise the images by altering the brain compartment's specific structural anatomy but preserve the head's gross geometry. The images are suitable for MEG source reconstruction. For information about the procedure to generate the individual warped templates and potential usage in re-analysis of the MEG data, please see [5]
 
 *Missing data:*
@@ -168,6 +170,7 @@ The original MRI obtained for each participant is not part of NatMEG-PD due to p
 * Participant 070 did not do MRI.
 
 ## References
+
 [1] Vinding, M. C. et al. The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset. (*in prep.*)
 [2] Vinding, M. C. et al. Changes in non-oscillatory features of the cortical sensorimotor rhythm in Parkinson's disease across age. *medrxiv.org* (2021) doi:10.1101/2021.06.27.21259592.
 [3] Vinding, M. C. et al. (*in prep*).
