@@ -143,7 +143,7 @@ MRI data were collected at MR-Centrum, Karolinska Institutet, Stockholm, Sweden.
 * Participant 105 is missing "start" trigger.
 * Participant 035 is missing "start" and "stop" triggers.
 * Participants 015 and 068 are missing "start" trigger - stop trigger instead has the "start" trigger value. See "*_events.tsv" files for more info.
-* Participants 041, 110, and 127 have multiple "start" triggers and missing "stop" triggers. Use the first "start" triggers. See "*-events.tsv" files for more info.
+* Participants 041, 110, and 127 have multiple "start" triggers and missing "stop" triggers. Use the first "start" triggers. See "*_events.tsv" files for more info.
 * Participant 063 has inverted trigger values. See "*_events.tsv" file for more info.
 
 ##### Go task
