@@ -43,21 +43,21 @@ Data collected April 2019 - March 2020
 
 ### Brief overview of the tasks in the experiment
 
-The experiment consists of MEG recording during three tasks - resting state, passive movements, and go.
+The experiment consists of MEG recording during three tasks - resting state, passive movements, and go task.
 
 **Resting-state.** Three minutes of resting-state MEG while the participants sat with their eyes closed. The participants were instructed to close their eyes, sit still, and relax for three minutes. The recordings began after assuring the participant sat still with their eyes closed.
 
 The goal of the resting-state MEG recordings was to examine how features of cortical somatosensory oscillatory activity differ between PD patients and healthy controls across age and gender and the relation of these features to PD motor symptoms. Resting-state recordings were performed for three minutes while participants sat relaxed with their eyes closed. For more information, see [2].
 
-**Go task.**
-Participants responded to a visual cue by pressing a button with their right index finger.
-
-The aim of the go task was to examine the beta ERS and ERD in PD patients and healthy. The background, methods, and results are described by [3].
-
 **Passive movement.**
 Passive movements were induced to the right index finger.
 
 The aim of the passive movements was to examine the beta ERS and ERD in PD patients and healthy controls (similar to [4]]). The background, methods, and results are described in [3].
+
+**Go task.**
+Participants responded to a visual cue by pressing a button with their right index finger.
+
+The aim of the go task was to examine the beta ERS and ERD in PD patients and healthy. The background, methods, and results are described by [3].
 
 ###Description of the contents of the dataset
 
