@@ -29,7 +29,7 @@ In order to use potentially identifiable human Data provided by EBRAINS services
 ### Contact persons
 
 * Mikkel C. Vinding, email: mikkel.vinding@ki.se, ORCID:  https://orcid.org/0000-0002-7954-2886
-* Daniel Lundqvist, email: daniel.lundqvist@ki.se1
+* Daniel Lundqvist, email: daniel.lundqvist@ki.se, ORCID: https://orcid.org/0000-0003-1593-2559
 
 ### Practical information to access the data
 
