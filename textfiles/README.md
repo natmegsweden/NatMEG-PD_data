@@ -114,7 +114,7 @@ MRI was obtained on a separate day.
 **Resting-state:**
 During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The start and the end of the three-minute resting-state period is marked with a trigger ("start": STI101 = 1, "stop" STI101 = 64)).
 
-**go task:** 
+**Go task:** 
 The participants were instructed to respond to a visual cue presented on the screen by pressing a button with their right index finger. The visual cue consisted of a fixed white dot at the middle of the screen. At a random time between 2.5-4.5 s after trial onset, the dot would change colour to red. The instructions were to respond as soon as they saw the dot change colour. After the participant pressed the button, there would be a delay of between 2.0-2.5 s before a new trial began. The task was repeated for 150 trials, split into six blocks of 25 trials with a short intermediate break to counter fatigue. The participants were given a few training trials to familiarise themselves with the task before the recording began. The recording began once the experimenter had ensured that the participants understood and performed the task correct. The onset of the visual cue and the onset of the button press is marked in the trigger channels in the MEG data.
 
 **Passive movements:**
