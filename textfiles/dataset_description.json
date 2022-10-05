@@ -2,7 +2,9 @@
 	"Name":"The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset (NatMEG-PD)",
 	"BIDSVersion":"v1.6.0",
 	"DatasetType":"raw",
-	"EthicsApprovals":"The Swedish Ethical Review Authority. DNR 2019-00542",
+	"EthicsApprovals": [
+		"The Swedish Ethical Review Authority. DNR 2019-00542"
+	],
   	"License": "EBRAINS Data Use Agreement version 1.0",
   	"Authors": [
   		"Mikkel C. Vinding",
