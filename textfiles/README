@@ -2,7 +2,7 @@
 
 This is the README for the National Facility for Magnetoencephalography Parkinson's Disease dataset (NatMEG-PD). Below you will find important information about usage, permissions, and content in the dataset.
 
-Please read this document carefully before you use data from the NatMEG-PD dataset.
+Please read this document carefully before you use data from NatMEG-PD.
 
 For more information about NatMEG-PD, please read the following paper [1]:
 
@@ -12,7 +12,7 @@ REF
 
 ### Data user agreement
 
-The NatMEG-PD dataset is available through EBRAINS (www.ebrains.eu) under the terms of EBRAINS Data Usage Agreement for human data (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf) and EBRAINS General terms of use (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_General_Terms_of_use_e457353c1a_d2122f84c2.pdf).
+NatMEG-PD is available through EBRAINS (www.ebrains.eu) under the terms of EBRAINS Data Usage Agreement for human data (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_Data_Use_Agreement_90858e7836_ef3ee29d50.pdf) and EBRAINS General terms of use (https://strapi-prod.sos-ch-dk-2.exo.io/EBRAINS_General_Terms_of_use_e457353c1a_d2122f84c2.pdf).
 
 In order to use potentially identifiable human Data provided by EBRAINS services, you agree to the following terms:
 * You are data controller for any Pseudonymised Data provided by EBRAINS services and will comply with the provisions of the GDPR.
@@ -76,7 +76,7 @@ Available Modalities:
 
 ### Subjects
 
-The NatMEG-PD dataset includes data from 66 PD patients (age 44-77; 28 female) and 68 healthy controls (age 46-78; 30 female). 
+NatMEG-PD includes data from 66 PD patients (age 44-77; 28 female) and 68 healthy controls (age 46-78; 30 female). 
 
 Subjects from the patient group were recruited from the Parkinson's Outpatient Clinic, Department of Neurology, Karolinska University Hospital, Stockholm, Sweden. Recruitment of healthy controls was conducted via advertising or amongst spouses of PD patients. 
 
@@ -111,13 +111,13 @@ MRI was obtained on a separate day.
 
 ### Task details
 
-**Resting-state:**
+#### Resting-state
 During the three minutes of resting-state, MEG recording participants sat with closed eyes. The participants were given the instructions to close their eyes and relax. The measurements started after assuring the participants sat still with their eyes closed. The start and the end of the three-minute resting-state period is marked with a trigger ("start": STI101 = 1, "stop" STI101 = 64)).
 
-**Go task:** 
+#### Go task
 The participants were instructed to respond to a visual cue presented on the screen by pressing a button with their right index finger. The visual cue consisted of a fixed white dot at the middle of the screen. At a random time between 2.5-4.5 s after trial onset, the dot would change colour to red. The instructions were to respond as soon as they saw the dot change colour. After the participant pressed the button, there would be a delay of between 2.0-2.5 s before a new trial began. The task was repeated for 150 trials, split into six blocks of 25 trials with a short intermediate break to counter fatigue. The participants were given a few training trials to familiarise themselves with the task before the recording began. The recording began once the experimenter had ensured that the participants understood and performed the task correct. The onset of the visual cue and the onset of the button press is marked in the trigger channels in the MEG data.
 
-**Passive movements:**
+#### Passive movements
 Proprioceptive stimulation was induced through passive movements of the right index finger by a custom-made MEG-compatible pneumatic movement actuator. The visual stimulus was matched to the go task, except the participants were explicitly instructed to relax, not to move, and focus their gaze at the visual stimuli. The dot changed colour after a random time interval of 2.5-3.5 s, upon which the passive movement would be induced after an additional interval of 0.2-0.5 s. The movement actuator would move the finger for 0.15 s giving a movement duration of about 0.3 s. The onset of the visual cue and movement actuator are marked in the trigger channels in the MEG data. The movement kinematics can be evaluated using the accelerometer data. There would then be a delay of between 2.0-2.5 s after the activation of the movement actuator before a new trial began. The procedure was repeated for 150 trials. The procedure would begin after the experimenter had ensured that the participant had the index finger placed correctly on the movement actuator and that the participant perceived the passive movement. 
 
 ### Experimental location
@@ -130,7 +130,7 @@ MRI data were collected at MR-Centrum, Karolinska Institutet, Stockholm, Sweden.
 
 #### Clinical data and metadata
 
-* Participant 093 had an LT foot injury and was unable to put weight on the foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-III.
+* Participant 093 had a foot injury and was unable to put weight on the foot. Unrated for all LLE, Gait, and Balance categories on MDS-UPDRS-III.
 
 #### MEG recordings and data
 
@@ -172,8 +172,12 @@ The original MRI obtained for each participant is not part of NatMEG-PD to prote
 ## References
 
 [1] Vinding, M. C. et al. The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset. (*in prep.*)
+
 [2] Vinding, M. C. et al. Changes in non-oscillatory features of the cortical sensorimotor rhythm in Parkinson's disease across age. *medrxiv.org* (2021) doi:10.1101/2021.06.27.21259592.
+
 [3] Vinding, M. C. et al. (*in prep*).
+
 [4] Vinding, M. C. et al. Attenuated beta rebound to proprioceptive afferent feedback in Parkinson's disease. *Scientific Reports 9*, (2019) doi:10.1038/s41598-019-39204-3.
+
 [5] Vinding, M. C. & Oostenveld, R. Sharing individualised template MRI data for MEG source reconstruction: a solution for open data while keeping subject confidentiality. *NeuroImage 119165* (2022) doi:10.1016/j.neuroimage.2022.119165.
 

@@ -1,0 +1,23 @@
+﻿# README
+
+This is the README for derivative individualized warped template MRI in the National Facility for Magnetoencephalography Parkinson's Disease dataset (NatMEG-PD). Below you will find important information about usage, permissions, and content in the dataset.
+
+Please read this document carefully before you use data from the NatMEG-PD dataset.
+
+The original MRI obtained for each participant is not part of NatMEG-PD to protect the privacy of the research participants. Here we provide individual warped templates that anonymise the images by altering the brain compartment's specific structural anatomy but preserve the head's gross geometry. The images are suitable for MEG source reconstruction. For information about the procedure to generate the individual warped templates and potential usage in re-analysis of the MEG data, please see [1].
+
+*Missing data:*
+* MRI were not acquired for participants 019, 024, 033, 039, 057, 066, 072, 088, 091, 111, and 129 because of cancellation due to COVID-19 lockdown at the MR scanner facility.
+* MRI is missing for participant 061 due to corrupted source files.
+* Participant 070 did not do MRI.
+
+For more information about NatMEG-PD, please read following paper [2].
+
+## Code
+The code used to generate the individualized warped template MRI is found at: https://github.com/natmegsweden/PD_data_share/tree/main/scripts/mri_warp.
+
+## References
+
+[1] Vinding, M. C. & Oostenveld, R. Sharing individualised template MRI data for MEG source reconstruction: a solution for open data while keeping subject confidentiality. *NeuroImage 119165* (2022) doi:10.1016/j.neuroimage.2022.119165.
+
+[2] Vinding, M. C. et al. The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset. (*in prep.*)

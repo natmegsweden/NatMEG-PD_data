@@ -34,7 +34,7 @@ for ii, subjid in enumerate(linkdata.anonym_id):
     infile = op.join(raw_path, origid, origid+'_mri_warptmp.nii')
     
     out_path = op.join(drv_path, 'sub-'+subjid, 'anat')
-    outfile = op.join(out_path, 'sub-'+subjid+'_desc-warpimg.nii')
+    outfile = op.join(out_path, 'sub-'+subjid+'_desc-warpimg_T1w.nii')
     
     if not op.exists(infile):
         nomri_org += [origid]

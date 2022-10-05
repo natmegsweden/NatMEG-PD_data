@@ -62,6 +62,10 @@ for ii = 1:length(subjects)
             jsonData.PowerLineFrequency = str2num(jsonData.PowerLineFrequency);
         end
 
+        if ~isfield(jsonData, 'ManufacturersModelName')
+             jsonData.ManufacturersModelName = 'ElektaTRIUX';
+        end
+
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Convert to JSON text
         ft_write_json(fname, jsonData)

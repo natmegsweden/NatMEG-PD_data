@@ -1,5 +1,12 @@
 Revision history for NatMEG-PD dataset
 
+0.1.1 2022-10-05
+- Update "README"
+- Added "T1w" to all warped template MRI filenames
+- Fixed formatting errors in json files
+- Added README to /derivatives/warpimg/
+- Fixed invalid channel names in channels.tsv files
+
 0.1.0 2022-10-01
 - Update "README.md"
 

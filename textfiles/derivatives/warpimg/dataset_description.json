@@ -1,11 +1,11 @@
 {
-	"Name": "NatMEG_PD_dataset",
+	"Name": "The Swedish National Facility for Magnetoencephalography Parkinson's Disease Dataset (NatMEG-PD)",
 	"BIDSVersion": "v1.6.0",
 	"DatasetType": "derivative",
 	"EthicsApprovals":"The Swedish Ethical Review Authority. DNR 2019-00542",
-	"GeneratedBy": [
+	"GeneratedBy": {
 		"Name": "warpmig",
 		"Description": "Warped template to participants' anatomical MRI described in https://doi.org/10.1016/j.neuroimage.2022.119165",
-      		"CodeURL": "https://github.com/natmegsweden/PD_data_share/tree/main/scripts/mri_warp"
-	]
+		"CodeURL": "https://github.com/natmegsweden/PD_data_share/tree/main/scripts/mri_warp"
+	}
 }
