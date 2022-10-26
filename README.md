@@ -1,4 +1,5 @@
-# PD_data_share
+# NatMEG-PD data preperation
+
 Scripts for preperation of data for the Nationalfacility for Magnetoecephalography's Parkinson's Disease dataset (NatMEG-PD).
 
 For information about NatMEG-PD please refer to the following publication;
@@ -10,9 +11,3 @@ This repository contains the script for anonymizing data and arranging data acco
 The NatMEG-PD data is available through EBRAINS at the following location:
 
 REF.
-
-This is not the BIDS README!
-
-
-
-
