@@ -1,4 +1,4 @@
-# NatMEG-PD data preperation
+# NatMEG-PD data preparation
 
 Scripts for preperation of data for the National facility for Magnetoecephalography's Parkinson's Disease dataset (NatMEG-PD).
 
