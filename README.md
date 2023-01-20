@@ -4,7 +4,7 @@ Scripts for preperation of data for The Swedish National Facility for Magnetoenc
 
 This repository contains the script for anonymizing data and arranging data according to the MEG-BIDS format.
 
-For information about NatMEG-PD please refer to the data describtor :
+For information about NatMEG-PD please refer to the data descriptor :
 
 > **Vinding, M. C., Eriksson, A., Comarovschii, I., Waldthaler, J., Manting, C. L., Oostenveld, R., Ingvar, M., Svenningsson, P., & Lundqvist, D. (2023). *The Swedish National Facility for Magnetoencephalography Parkinson’s Disease Dataset (v1.0)* [Data set]. EBRAINS. https://doi.org/10.25493/NMD2-2FW**
 
