@@ -13,6 +13,7 @@
 		"Cassia Man Ting Low",
 		"Josefine Waldthaler",
 		"Robert Oostenveld",
+		"Martin Ingvar",
 		"Per Svenningsson",
 		"Daniel Lundqvist"
   	],
@@ -27,5 +28,5 @@
 		"Vinding, M. C. et al. (in prep)",
 		"Vinding, M. C. & Oostenveld, R. Sharing individualised template MRI data for MEG source reconstruction: a solution for open data while keeping subject confidentiality. NeuroImage 119165 (2022) doi:10.1016/j.neuroimage.2022.119165"
 	],
-	"DatasetDOI": "XXX"
+	"DatasetDOI": "https://doi.org/10.25493/NMD2-2FW"
 }
