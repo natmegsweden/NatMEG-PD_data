@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jul 31 16:40:25 2023
-
+Get summaries of head movement in scanner per group.
 @author: mikkel
-"""
 
+For information about NatMEG-PD please refer to the data descriptor :
+   Vinding, M. C., Eriksson, A., Comarovschii, I., Waldthaler, J., Manting, C. L., Oostenveld, R., Ingvar, M., Svenningsson, P., & Lundqvist, D. (2023). The Swedish National Facility for Magnetoencephalography Parkinson?s Disease Dataset (v1.0) [Data set]. EBRAINS. https://doi.org/10.25493/NMD2-2FW
+
+The NatMEG-PD data is available through at the following location:
+   https://search.kg.ebrains.eu/instances/d5088e83-cbf1-4ea2-b64c-b10778121b4e
+   
+"""
 import mne
 import os.path as op
 import numpy
