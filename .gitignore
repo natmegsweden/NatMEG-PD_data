@@ -1,9 +1,16 @@
-
+# .gitignore
 
 # Locas folders
 BIDS_data/
 misc/
 mri_warp/
 sourcefiles/
+sourcedata/
 textfiles/archive
 scripts/bidsify/temp
+scripts/bidsify/old
+figures/
+
+# File extensions
+*.asv
+*~
