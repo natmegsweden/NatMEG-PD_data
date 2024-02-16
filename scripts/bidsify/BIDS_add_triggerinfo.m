@@ -1,5 +1,15 @@
 %% Add trigger info to event.tsv files and copy events.json file to sub folders.
 % 
+% For information about NatMEG-PD please refer to the data descriptor:
+%
+% Vinding, M. C., Eriksson, A., Comarovschii, I., Waldthaler, J., Manting, C. L., 
+% 	 Oostenveld, R., Ingvar, M., Svenningsson, P., & Lundqvist, D. (2024). The 
+%   Swedish National Facility for Magnetoencephalography Parkinson's disease dataset.
+%   Scientific Data, 11(1), 150. https://doi.org/10.1038/s41597-024-02987-w
+%
+% The NatMEG-PD data is available through at the following location:
+%   https://search.kg.ebrains.eu/instances/d55146e8-fc86-44dd-95db-7191fdca7f30
+%
 addpath('/home/mikkel/fieldtrip/fieldtrip') % Add the path
 addpath('/home/mikkel/jsonlab/jsonlab')
 

@@ -1,7 +1,5 @@
 %% Import subject data from database and anonymize. 
 %
-% <Ref>
-%
 % Import databases with subject id and filepaths. Generate a key for
 % pseudonymization. Save as database and csv. NB! This script should only
 % ever be run once to generate the key. Otherwise we have to redo the
@@ -9,6 +7,17 @@
 
 % Should the process overwite existing linkdata? If yes, then all previous
 % BIDSification will be invalid!
+%
+% For information about NatMEG-PD please refer to the data descriptor:
+%
+% Vinding, M. C., Eriksson, A., Comarovschii, I., Waldthaler, J., Manting, C. L., 
+% 	 Oostenveld, R., Ingvar, M., Svenningsson, P., & Lundqvist, D. (2024). The 
+%   Swedish National Facility for Magnetoencephalography Parkinson's disease dataset.
+%   Scientific Data, 11(1), 150. https://doi.org/10.1038/s41597-024-02987-w
+%
+% The NatMEG-PD data is available through at the following location:
+%   https://search.kg.ebrains.eu/instances/d55146e8-fc86-44dd-95db-7191fdca7f30
+%
 overwrite = 0;
 
 %% Read data

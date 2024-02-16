@@ -2,10 +2,15 @@
 % This script uses the FieldTrip toolbox to reorganize MEG data to BIDS.
 %
 % For information about NatMEG-PD please refer to the data descriptor:
-%   Vinding, M. C., Eriksson, A., Comarovschii, I., Waldthaler, J., Manting, C. L., Oostenveld, R., Ingvar, M., Svenningsson, P., & Lundqvist, D. (2023). The Swedish National Facility for Magnetoencephalography Parkinsons Disease Dataset (v1.0) [Data set]. EBRAINS. https://doi.org/10.25493/NMD2-2FW
+%
+% Vinding, M. C., Eriksson, A., Comarovschii, I., Waldthaler, J., Manting, C. L., 
+% 	 Oostenveld, R., Ingvar, M., Svenningsson, P., & Lundqvist, D. (2024). The 
+%   Swedish National Facility for Magnetoencephalography Parkinson's disease dataset.
+%   Scientific Data, 11(1), 150. https://doi.org/10.1038/s41597-024-02987-w
 %
 % The NatMEG-PD data is available through at the following location:
-%   https://search.kg.ebrains.eu/instances/d5088e83-cbf1-4ea2-b64c-b10778121b4e
+%   https://search.kg.ebrains.eu/instances/d55146e8-fc86-44dd-95db-7191fdca7f30
+%
 
 close all       % Close all open windows
 clear all       % Clear all variables from the workspace

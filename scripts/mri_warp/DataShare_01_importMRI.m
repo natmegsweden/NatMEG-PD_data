@@ -1,12 +1,19 @@
 %% Import/export raw MRI, from previous project or from raw.
 %
-% Used for data described in: <ref>
-% DOI: <ref>
+% Used for data described in:
+% Vinding, M. C., Eriksson, A., Comarovschii, I., Waldthaler, J., Manting, C. L., 
+% 	 Oostenveld, R., Ingvar, M., Svenningsson, P., & Lundqvist, D. (2024). The 
+%   Swedish National Facility for Magnetoencephalography Parkinson's disease dataset.
+%   Scientific Data, 11(1), 150. https://doi.org/10.1038/s41597-024-02987-w
 %
-% Import orignal MRI from previous project or from raw
+% The NatMEG-PD data is available through at the following location:
+%   https://search.kg.ebrains.eu/instances/d55146e8-fc86-44dd-95db-7191fdca7f30
 %
-% Warping pipeline is described in: Vinding, M. C., & Oostenveld, R. (2021). Sharing individualised template MRI data for MEG source reconstruction: A solution for open data while keeping subject confidentiality [Preprint]. bioRxiv.org. https://doi.org/10.1101/2021.11.18.469069
-
+% Warping pipeline is described in: 
+% Vinding, M. C., & Oostenveld, R. (2022). Sharing individualised template MRI data 
+% 	 for MEG source reconstruction: A solution for open data while keeping s ubject 
+%   confidentiality. NeuroImage, 119165. https://doi.org/10.1016/j.neuroimage.2022.119165
+%
 addpath('/home/mikkel/PD_long/data_share/scripts')
 [dirs, subj_mri] = DS_SETUP();
 overwrite = 0;
